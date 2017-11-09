@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="soSpinnerRiceItems">
-        <item>White rice</item>
-        <item>Brown rice</item>
-        <item>Sticky rice</item>
-        <item>Jasmine rice</item>
+        <item>White rice (10k)</item>
+        <item>Jasmine rice (12k)</item>
+        <item>Brown rice (14k)</item>
+        <item>Sticky rice (14k)</item>
     </string-array>
 </resources>

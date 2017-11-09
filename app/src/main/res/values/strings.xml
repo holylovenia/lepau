@@ -1,21 +1,37 @@
 <resources>
     <string name="app_name">Lepau</string>
-    <string name="title_activity_special_order">SpecialOrderActivity</string>
+    <string name="title_activity_special_order">Lepau\'s Custom Fried Rice</string>
     <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
-    <!-- Special Order -->
+    <!-- Special OrderItem -->
     <string name="so_next">Next</string>
     <string name="so_finish">Add to Order</string>
     <string name="so_rice">Rice</string>
     <string name="so_spinner_prompt">Choose rice type</string>
     <string name="so_size">Size</string>
     <string name="so_small">Small</string>
-    <string name="so_medium">Medium</string>
-    <string name="so_large">Large</string>
+    <string name="so_medium">Medium (+3k)</string>
+    <string name="so_large">Large (+5k)</string>
     <string name="so_spiciness">Spiciness Level</string>
     <string name="so_spiciness_default">Not spicy</string>
+    <string name="so_status">Progress bar</string>
+
+    <string name="so_topping">Add toppings (@3k each)</string>
+    <string name="topping_scrambled_egg">Scrambled egg</string>
+    <string name="topping_sunny_side_up">Sunny side up</string>
+    <string name="topping_chicken">Chicken</string>
+    <string name="topping_beef">Beef</string>
+    <string name="topping_seafood">Seafood</string>
+    <string name="topping_cheese">Cheese</string>
+    <string name="topping_vegetable">Vegetable</string>
+    <string name="topping_sausage">Sausage</string>
+    <string name="topping_meatball">Meatball</string>
+    
+    <string name="so_complete_order_header">Order details</string>
+    <string name="so_complete_rice">Rice</string>
+    <string name="so_complete_size">Size</string>
+    <string name="so_complete_spiciness">Spiciness</string>
+    <string name="so_complete_topping">Topping</string>
+    <string name="so_complete_price_placeholder">0</string>
+    <string name="so_complete_price">Price</string>
 </resources>
