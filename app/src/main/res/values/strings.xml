@@ -16,6 +16,21 @@
     <string name="so_spiciness_default">Not spicy</string>
     <string name="so_status">Progress bar</string>
 
+    <string name="so_small_alt_1">Small (-3k)</string>
+    <string name="so_medium_alt_1">Medium</string>
+    <string name="so_large_alt_1">Large (+2k)</string>
+
+    <string name="so_small_alt_2">Small (-5k)</string>
+    <string name="so_medium_alt_2">Medium (-2k)</string>
+    <string name="so_large_alt_2">Large</string>
+
+    <string name="so_spice_0">Not spicy</string>
+    <string name="so_spice_1">Level 1</string>
+    <string name="so_spice_2">Level 2</string>
+    <string name="so_spice_3">Level 3</string>
+    <string name="so_spice_4">Level 4</string>
+    <string name="so_spice_5">Level 5</string>
+
     <string name="so_topping">Add toppings (@3k each)</string>
     <string name="topping_scrambled_egg">Scrambled egg</string>
     <string name="topping_sunny_side_up">Sunny side up</string>

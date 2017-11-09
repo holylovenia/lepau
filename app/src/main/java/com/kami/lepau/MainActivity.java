@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // DEBUG: Auto Redirect to Special Order
+        // DEBUG: Auto Redirect to Special OrderItem
         Intent intent = new Intent(this, SpecialOrderActivity.class);
         startActivity(intent);
         finish();
