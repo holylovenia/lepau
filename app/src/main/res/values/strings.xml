@@ -8,7 +8,7 @@
     <string name="sign_up">Sign Up</string>
     <string name="sign_in">Sign In</string>
     <string name="make_your_own_fried_rice">Make Your Own Fried Rice</string>
-    
+
     <string-array name="menu_titles">
         <item>Bacon and Eggs</item>
         <item>Curry</item>
@@ -23,9 +23,18 @@
         <item>Savory and hearty Japanese beef curry recipe made with beef, potatoes, carrots, mushroom, and Japanese curry roux.</item>
         <item>Instant Noodles are made from carefully selected ingredients, the best quality flour and fresh spices from the natural resources of Indonesia.</item>
         <item>One of the most popular Malaysian traditional delicacies made from glutinous rice.</item>
-        <item>Our omelettes look like they're made-to-order because they are — with eggs filled with your choice of fresh vegetables, meats and cheeses and rolled.</item>
+        <item>Our omelettes look like they are made-to-order because they are - with eggs filled with your choice of fresh vegetables, meats and cheeses and rolled.</item>
         <item>Slices of bread are soaked or dipped in a mixture of beaten eggs, often whisked with milk or cream.</item>
     </string-array>
+
+    <integer-array name="menu_prices">
+        <item>20000</item>
+        <item>35000</item>
+        <item>10000</item>
+        <item>15000</item>
+        <item>40000</item>
+        <item>25000</item>
+    </integer-array>
 
     <array name="menu_pictures">
         <item>@drawable/menu_bacon</item>

@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * Menu contains a list of ordered items from Lepau.
+ * MenuActivity contains a list of ordered items from Lepau.
  * The class is made Serializable for easier data passing between Intents.
  * @see <a href="https://stackoverflow.com/questions/2736389/how-to-pass-an-object-from-one-activity-to-another-on-android">Intent Passing a Serializable Data Class</a>
  */

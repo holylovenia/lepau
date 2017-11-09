@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/mediumBrown"
     android:padding="20dp"
-    tools:context="com.kami.lepau.Menu">
+    tools:context="com.kami.lepau.MenuActivity">
 
     <RelativeLayout
         android:id="@+id/activityMenu_friedRiceCover"
@@ -17,19 +17,21 @@
             android:id="@+id/activityMenu_friedRiceIcon"
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:layout_marginTop="-10dp"
             android:src="@drawable/fried_rice" />
 
-        <TextView
+        <Button
             android:id="@+id/activityMenu_friedRiceTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/activityMenu_friedRiceIcon"
-            android:padding="10dp"
+            android:padding="16dp"
             android:text="@string/make_your_own_fried_rice"
             android:textAlignment="center"
-            android:textColor="@color/beige"
-            android:textSize="22sp"
+            android:textColor="@color/mediumBrown"
+            android:background="@drawable/order_button"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
     </RelativeLayout>

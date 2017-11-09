@@ -14,6 +14,7 @@ public class OrderItem implements Serializable {
     private String itemDescription = "";
     private int pricePerItem = 0;
     private int quantity = 0;
+    private int imageResource = 0;
     private SpecialOrderItem specialOrderItem = null;
 
     /**
@@ -28,11 +29,12 @@ public class OrderItem implements Serializable {
      * @param pricePerItem the item's price
      * @param quantity the amount of item
      */
-    public OrderItem(String itemName, String itemDescription, int pricePerItem, int quantity) {
+    public OrderItem(String itemName, String itemDescription, int pricePerItem, int quantity, int imageResource) {
         this.itemName = itemName;
         this.itemDescription = itemDescription;
         this.pricePerItem = pricePerItem;
         this.quantity = quantity;
+        this.imageResource = imageResource;
     }
 
     public OrderItem(boolean isSpecialOrder) {
@@ -41,6 +43,7 @@ public class OrderItem implements Serializable {
         this.pricePerItem = 0;
         this.quantity = 0;
         this.specialOrderItem = new SpecialOrderItem();
+        this.imageResource = -999;
     }
 
     public String getItemName() {
@@ -57,6 +60,10 @@ public class OrderItem implements Serializable {
 
     public int getQuantity() {
         return quantity;
+    }
+
+    public int getImageResource() {
+        return imageResource;
     }
 
     public SpecialOrderItem getSpecialOrderItem() {

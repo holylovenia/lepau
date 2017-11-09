@@ -44,6 +44,7 @@
             android:layout_toRightOf="@id/fragmentSignIn_emailIcon"
             android:background="#00000000"
             android:hint="@string/enter_your_email"
+            android:inputType="textEmailAddress"
             android:padding="16dp"
             android:textColor="@color/mediumBrown"
             android:textColorHint="@color/mocca" />
@@ -88,6 +89,7 @@
             android:textColorHint="@color/mocca" />
 
         <Button
+            android:id="@+id/fragmentSignIn_signInButton"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/fragmentSignIn_passwordEditText"
