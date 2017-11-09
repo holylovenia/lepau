@@ -1,6 +1,7 @@
 package com.kami.lepau;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,9 +15,26 @@ import com.kami.lepau.R;
  */
 public class SpecialOrderToppingFragment extends Fragment {
 
+    String riceType;
+    String size;
+    int spiceLevel;
+
+    View view;
+
 
     public SpecialOrderToppingFragment() {
-        // Required empty public constructor
+        Bundle bundle = this.getArguments();
+        if (bundle != null) {
+            riceType = bundle.getString("riceType");
+            size = bundle.getString("size");
+            spiceLevel = bundle.getInt("spiceLevel");
+        }
+
+        if (riceType == null || size == null) {
+            Intent intent = new Intent(this.getActivity(), MainActivity.class);
+            startActivity(intent);
+            getActivity().finish();
+        }
     }
 
 

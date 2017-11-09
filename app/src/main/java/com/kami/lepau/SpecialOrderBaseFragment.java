@@ -46,6 +46,7 @@ public class SpecialOrderBaseFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_special_order_base, container, false);
+        fragmentManager = getActivity().getSupportFragmentManager();
 
         ivStatus = (ImageView) view.findViewById(R.id.so_base_status);
         spRiceType = (Spinner) view.findViewById(R.id.so_base_spinner);
