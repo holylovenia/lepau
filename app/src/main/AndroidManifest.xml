@@ -11,8 +11,11 @@
         android:theme="@style/AppThemeNoTitleBar">
         <activity android:name=".MainActivity" />
         <activity android:name=".AuthenticationActivity">
+        </activity>
+        <activity android:name=".Menu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
