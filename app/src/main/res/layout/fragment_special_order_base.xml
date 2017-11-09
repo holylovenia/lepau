@@ -1,13 +1,111 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.kami.lepau.SpecialOrderBaseFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
+        android:id="@+id/so_base_scroll"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:textSize="24sp"
+                android:text="@string/so_rice"/>
+
+            <Spinner
+                android:id="@+id/so_base_spinner"
+                android:layout_width="fill_parent"
+                android:paddingBottom="24dp"
+                android:prompt="@string/so_spinner_prompt"
+                android:entries="@array/soSpinnerRiceItems"
+                style="@style/LepauSpinner"
+                android:layout_height="wrap_content" />
+
+            <View style="@style/LepauDivider"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:textSize="24sp"
+                android:text="@string/so_size"/>
+
+            <RadioGroup
+                android:id="@+id/so_base_radio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/so_base_radio_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/so_small"/>
+
+                <RadioButton
+                    android:id="@+id/so_base_radio_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/so_medium"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/so_base_radio_large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/so_large"/>
+
+            </RadioGroup>
+
+            <View style="@style/LepauDivider"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="24dp"
+                android:paddingBottom="8dp"
+                android:textSize="24sp"
+                android:text="@string/so_spiciness"/>
+
+            <SeekBar
+                android:id="@+id/so_base_seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:max="100"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:text="@string/so_spiciness_default"
+                android:textSize="18sp"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/so_base_next"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:background="@color/gold"
+        android:textSize="18sp"
+        android:text="@string/so_next"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="soSpinnerRiceItems">
+        <item>White rice</item>
+        <item>Brown rice</item>
+        <item>Sticky rice</item>
+        <item>Jasmine rice</item>
+    </string-array>
+</resources>

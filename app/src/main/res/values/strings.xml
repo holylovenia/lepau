@@ -6,4 +6,16 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Special Order -->
+    <string name="so_next">Next</string>
+    <string name="so_finish">Add to Order</string>
+    <string name="so_rice">Rice</string>
+    <string name="so_spinner_prompt">Choose rice type</string>
+    <string name="so_size">Size</string>
+    <string name="so_small">Small</string>
+    <string name="so_medium">Medium</string>
+    <string name="so_large">Large</string>
+    <string name="so_spiciness">Spiciness Level</string>
+    <string name="so_spiciness_default">Not spicy</string>
 </resources>
