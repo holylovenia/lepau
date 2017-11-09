@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/beige"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/fragmentSignIn_relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="50dp">
+
+        <android.support.v4.widget.Space
+            android:id="@+id/fragmentSignIn_spaceEmail"
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <ImageView
+            android:id="@+id/fragmentSignIn_emailInput"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragmentSignIn_spaceEmail"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/input_text"
+            android:padding="16dp" />
+
+        <ImageView
+            android:id="@+id/fragmentSignIn_emailIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/fragmentSignIn_spaceEmail"
+            android:layout_gravity="start"
+            android:paddingLeft="10dp"
+            android:src="@drawable/ic_email_black_24dp"
+            android:tint="@color/mocca" />
+
+        <EditText
+            android:id="@+id/fragmentSignIn_emailEditText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragmentSignIn_spaceEmail"
+            android:layout_toRightOf="@id/fragmentSignIn_emailIcon"
+            android:background="#00000000"
+            android:hint="@string/enter_your_email"
+            android:padding="16dp"
+            android:textColor="@color/mediumBrown"
+            android:textColorHint="@color/mocca" />
+
+        <android.support.v4.widget.Space
+            android:id="@+id/fragmentSignIn_spacePassword"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_below="@id/fragmentSignIn_emailInput" />
+
+        <ImageView
+            android:id="@+id/fragmentSignIn_passwordInput"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragmentSignIn_spacePassword"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/input_text"
+            android:padding="16dp" />
+
+        <ImageView
+            android:id="@+id/fragmentSignIn_passwordIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/fragmentSignIn_spacePassword"
+            android:layout_gravity="start"
+            android:paddingLeft="10dp"
+            android:src="@drawable/ic_lock_black_24dp"
+            android:tint="@color/mocca" />
+
+        <EditText
+            android:id="@+id/fragmentSignIn_passwordEditText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragmentSignIn_spacePassword"
+            android:layout_toRightOf="@id/fragmentSignIn_passwordIcon"
+            android:background="#00000000"
+            android:fontFamily="sans-serif"
+            android:hint="@string/enter_your_password"
+            android:inputType="textPassword"
+            android:padding="16dp"
+            android:textColor="@color/mediumBrown"
+            android:textColorHint="@color/mocca" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fragmentSignIn_passwordEditText"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/submit_button"
+            android:padding="16dp"
+            android:text="@string/create_account"
+            android:textAllCaps="true"
+            android:textColor="@color/gold"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</ScrollView>
