@@ -2,6 +2,7 @@ package com.kami.lepau.data;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,17 +22,26 @@ public class ShoppingCartAdapter extends RecyclerView.Adapter<ShoppingCartAdapte
 
     public ShoppingCartAdapter(ArrayList<OrderItem> orderItems, Context context) {
         this.orderItems = orderItems;
+        int i = 0;
+        while(i < orderItems.size()) {
+            if(orderItems.get(i).getQuantity() == 0) {
+                orderItems.remove(i);
+            } else {
+                i++;
+            }
+        }
         this.context = context;
     }
 
     @Override
     public ShoppingCartAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.menu_list, parent, false));
+        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.shopping_cart_list, parent, false));
     }
 
     @Override
     public void onBindViewHolder(ShoppingCartAdapter.ViewHolder holder, int position) {
-
+        OrderItem currentOrderItem = orderItems.get(position);
+        holder.bindTo(currentOrderItem);
     }
 
     @Override
@@ -65,6 +75,7 @@ public class ShoppingCartAdapter extends RecyclerView.Adapter<ShoppingCartAdapte
 
         void bindTo(OrderItem currentOrderItem){
             //Populate the textviews with data
+            Log.d("BIND TO", currentOrderItem.getItemName());
             mTitleText.setText(currentOrderItem.getItemName());
             mQuantityText.setText(Integer.toString(currentOrderItem.getQuantity()));
             mPriceText.setText(Integer.toString(currentOrderItem.getPricePerItem()));

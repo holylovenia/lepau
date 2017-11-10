@@ -21,7 +21,7 @@
             android:src="@drawable/fried_rice" />
 
         <Button
-            android:id="@+id/activityMenu_friedRiceTextView"
+            android:id="@+id/activityMenu_friedRiceButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"

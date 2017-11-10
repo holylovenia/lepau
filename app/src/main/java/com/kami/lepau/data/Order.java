@@ -30,4 +30,12 @@ public class Order implements Serializable{
     public ArrayList<OrderItem> getAllOrders() {
         return orders;
     }
+
+    public int getTotal() {
+        int total = 0;
+        for(int i = 0; i < orders.size(); i++) {
+            total += orders.get(i).getTotalPrice();
+        }
+        return total;
+    }
 }

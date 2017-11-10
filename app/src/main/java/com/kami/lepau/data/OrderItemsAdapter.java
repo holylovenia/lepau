@@ -27,6 +27,10 @@ public class OrderItemsAdapter extends RecyclerView.Adapter<OrderItemsAdapter.Vi
         this.context = context;
     }
 
+    public ArrayList<OrderItem> getOrderItems() {
+        return orderItems;
+    }
+
     @Override
     public OrderItemsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.menu_list, parent, false));
@@ -46,7 +50,7 @@ public class OrderItemsAdapter extends RecyclerView.Adapter<OrderItemsAdapter.Vi
         return orderItems.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         //Member Variables for the TextViews
         private TextView mTitleText;
@@ -81,6 +85,7 @@ public class OrderItemsAdapter extends RecyclerView.Adapter<OrderItemsAdapter.Vi
                     if(quantity < 0) {
                         quantity = 0;
                     }
+                    orderItems.get(getAdapterPosition()).setQuantity(quantity);
                     mQuantityText.setText(Integer.toString(quantity));
                 }
             });
@@ -90,6 +95,7 @@ public class OrderItemsAdapter extends RecyclerView.Adapter<OrderItemsAdapter.Vi
                 public void onClick(View v) {
                     int quantity = Integer.parseInt(mQuantityText.getText().toString());
                     quantity++;
+                    orderItems.get(getAdapterPosition()).setQuantity(quantity);
                     mQuantityText.setText(Integer.toString(quantity));
                 }
             });
