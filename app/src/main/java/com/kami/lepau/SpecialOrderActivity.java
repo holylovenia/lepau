@@ -45,7 +45,7 @@ public class SpecialOrderActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, MenuActivity.class);
         startActivity(intent);
         finish();
     }

@@ -107,8 +107,8 @@ public class OrderItemsAdapter extends RecyclerView.Adapter<OrderItemsAdapter.Vi
             //Populate the textviews with data
             mTitleText.setText(currentOrderItem.getItemName());
             mDescriptionText.setText(currentOrderItem.getItemDescription());
-            mQuantityText.setText(Integer.toString(currentOrderItem.getQuantity()));
-            mPriceText.setText(Integer.toString(currentOrderItem.getPricePerItem()));
+            mQuantityText.setText(String.valueOf(currentOrderItem.getQuantity()));
+            mPriceText.setText(String.valueOf(currentOrderItem.getPricePerItem()));
         }
 
         @Override

@@ -39,7 +39,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
         totalTextView = (TextView) findViewById(R.id.activityShoppingCart_totalTextView);
-        totalTextView.setText(Integer.toString(mOrder.getTotal()));
+        totalTextView.setText(String.valueOf(mOrder.getTotal() + 2000));
 
         cancelButton = (Button) findViewById(R.id.activityShoppingCart_cancelOrderButton);
         confirmButton = (Button) findViewById(R.id.activityShoppingCart_confirmOrderButton);

@@ -95,7 +95,7 @@ public class OrderItem implements Serializable {
     }
 
 
-    private class SpecialOrderItem implements Serializable {
+    public class SpecialOrderItem implements Serializable {
 
         private String riceType;
         private String size;

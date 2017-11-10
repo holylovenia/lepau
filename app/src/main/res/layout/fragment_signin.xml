@@ -96,7 +96,7 @@
             android:layout_marginTop="40dp"
             android:background="@drawable/submit_button"
             android:padding="16dp"
-            android:text="@string/create_account"
+            android:text="@string/start_eating"
             android:textAllCaps="true"
             android:textColor="@color/gold"
             android:textSize="20sp"
