@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/mediumBrown"
     android:padding="20dp"
-    tools:context="com.kami.lepau.data.ShoppingCartActivity">
+    tools:context="com.kami.lepau.ShoppingCartActivity">
 
     <LinearLayout
         android:id="@+id/activityShoppingCart_orderLinearLayout"

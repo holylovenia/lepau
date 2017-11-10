@@ -1,4 +1,4 @@
-package com.kami.lepau.data;
+package com.kami.lepau;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
