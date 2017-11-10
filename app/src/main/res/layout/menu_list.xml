@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:padding="20dp">
 
-        <com.meg7.widget.CircleImageView
+        <ImageView
             android:id="@+id/menuList_menuPicture"
             android:layout_width="80dp"
             android:layout_height="80dp"
