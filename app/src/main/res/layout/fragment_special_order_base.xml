@@ -41,7 +41,8 @@
                 style="@style/LepauSpinner"
                 android:layout_height="wrap_content" />
 
-            <View style="@style/LepauDivider"/>
+            <View style="@style/LepauDivider"
+                android:backgroundTint="@color/gold"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -78,7 +79,8 @@
 
             </RadioGroup>
 
-            <View style="@style/LepauDivider"/>
+            <View style="@style/LepauDivider"
+                android:backgroundTint="@color/gold"/>
 
             <TextView
                 android:layout_width="match_parent"

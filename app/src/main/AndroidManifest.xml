@@ -19,7 +19,7 @@
         <activity
             android:name=".SpecialOrderActivity"
             android:label="@string/title_activity_special_order"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
