@@ -1,5 +1,6 @@
 package com.kami.lepau;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -191,6 +192,7 @@ public class SpecialOrderCompleteFragment extends Fragment {
         quantity = Integer.parseInt(etItemQuantity.getText().toString());
         String totalPriceStr = "Rp" + String.valueOf(pricePerItem * quantity);
         tvTotalPrice.setText(totalPriceStr);
+        orderItem.setPricePerItem(pricePerItem);
         etItemQuantity.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -216,6 +218,7 @@ public class SpecialOrderCompleteFragment extends Fragment {
                 quantity++;
                 String quantityStr = String.valueOf(quantity);
                 etItemQuantity.setText(quantityStr);
+                orderItem.setQuantity(quantity);
             }
         });
 
@@ -231,9 +234,19 @@ public class SpecialOrderCompleteFragment extends Fragment {
                 }
                 String quantityStr = String.valueOf(quantity);
                 etItemQuantity.setText(quantityStr);
+                orderItem.setQuantity(quantity);
             }
         });
 
+        btnFinish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MenuActivity.class);
+                intent.putExtra("SpecialOrder", orderItem);
+                startActivity(intent);
+                getActivity().finish();
+            }
+        });
 
 
         return view;

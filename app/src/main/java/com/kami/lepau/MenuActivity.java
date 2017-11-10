@@ -1,11 +1,15 @@
 package com.kami.lepau;
 
+import android.content.Intent;
 import android.content.res.TypedArray;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
 
+import com.kami.lepau.data.Order;
 import com.kami.lepau.data.OrderItem;
 import com.kami.lepau.data.OrderItemsAdapter;
 
@@ -13,14 +17,19 @@ import java.util.ArrayList;
 
 public class MenuActivity extends AppCompatActivity {
     //Member variables
+    private Order mOrder;
     private RecyclerView mRecyclerView;
     private ArrayList<OrderItem> mOrderItems;
     private OrderItemsAdapter mAdapter;
+    private Button mOrderButton;
+    private Button specialOrderButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        mOrder = new Order();
 
         //Initialize the RecyclerView
         mRecyclerView = (RecyclerView)findViewById(R.id.activityMenu_menuRecyclerView);
@@ -37,6 +46,35 @@ public class MenuActivity extends AppCompatActivity {
 
         //Get the data
         initializeData();
+
+        specialOrderButton = (Button) findViewById(R.id.activityMenu_friedRiceButton);
+        specialOrderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), SpecialOrderActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        mOrderButton = (Button) findViewById(R.id.activityMenu_orderButton);
+        mOrderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<OrderItem> normalOrderItems = mAdapter.getOrderItems();
+                OrderItem specialOrderItem = (OrderItem) getIntent().getSerializableExtra("SpecialOrder");
+                if(specialOrderItem != null) {
+                    mOrder.addOrder(specialOrderItem);
+                }
+                for(int i = 0; i < normalOrderItems.size(); i++) {
+                    mOrder.addOrder(normalOrderItems.get(i));
+                }
+                Intent intent = new Intent(v.getContext(), ShoppingCartActivity.class);
+                intent.putExtra("Order", mOrder);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     /**

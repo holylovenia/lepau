@@ -16,8 +16,6 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.kami.lepau.R;
-
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -59,12 +57,12 @@ public class SpecialOrderBaseFragment extends Fragment {
         rgSize.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if (i==R.id.so_base_radio_small) {
+                if (i == R.id.so_base_radio_small) {
                     rbSmall.setText(R.string.so_small);
                     rbMedium.setText(R.string.so_medium);
                     rbLarge.setText(R.string.so_large);
                 }
-                else if (i==R.id.so_base_radio_medium) {
+                else if (i == R.id.so_base_radio_medium) {
                     rbSmall.setText(R.string.so_small_alt_1);
                     rbMedium.setText(R.string.so_medium_alt_1);
                     rbLarge.setText(R.string.so_large_alt_1);
