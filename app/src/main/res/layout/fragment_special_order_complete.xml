@@ -178,29 +178,32 @@
                     android:orientation="horizontal">
 
                     <Button
+                        android:id="@+id/so_complete_dec_quantity"
                         android:layout_width="0dp"
                         android:layout_height="28dp"
                         style="@style/Widget.AppCompat.Button.Borderless"
                         android:background="@color/mediumBrown"
-                        android:text="<"
+                        android:text="@string/so_complete_dec"
                         android:textColor="@color/gold"
                         android:layout_weight="1" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/so_complete_quantity"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/so_complete_price_placeholder"
+                        android:text="@string/so_complete_quantity_placeholder"
                         android:textAlignment="center"
                         android:textSize="18sp"
+                        android:inputType="number"
                         android:layout_weight="2"/>
 
                     <Button
+                        android:id="@+id/so_complete_inc_quantity"
                         android:layout_width="0dp"
                         android:layout_height="28dp"
                         style="@style/Widget.AppCompat.Button.Borderless"
                         android:background="@color/mediumBrown"
-                        android:text=">"
+                        android:text="@string/so_complete_inc"
                         android:textColor="@color/gold"
                         android:layout_weight="1" />
 
@@ -219,7 +222,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/so_complete_total_price"
                     android:textSize="24sp"
-                    android:layout_weight="3"/>
+                    android:layout_weight="1"/>
 
                 <TextView
                     android:id="@+id/so_complete_total_price"
@@ -227,7 +230,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/so_complete_price_placeholder"
                     android:textAlignment="textEnd"
-                    android:textSize="18sp"
+                    android:textSize="24sp"
                     android:layout_weight="1"/>
 
             </LinearLayout>

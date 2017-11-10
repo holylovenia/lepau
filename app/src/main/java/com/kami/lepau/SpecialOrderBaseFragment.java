@@ -25,20 +25,18 @@ public class SpecialOrderBaseFragment extends Fragment {
 
     private FragmentManager fragmentManager;
 
-    View view;
-    ImageView ivStatus;
-    Spinner spRiceType;
-    RadioGroup rgSize;
-    RadioButton rbSmall;
-    RadioButton rbMedium;
-    RadioButton rbLarge;
-    SeekBar sbSpiciness;
-    TextView tvSpiciness;
-    Button btnNext;
+    private View view;
+    private ImageView ivStatus;
+    private Spinner spRiceType;
+    private RadioGroup rgSize;
+    private RadioButton rbSmall;
+    private RadioButton rbMedium;
+    private RadioButton rbLarge;
+    private SeekBar sbSpiciness;
+    private TextView tvSpiciness;
+    private Button btnNext;
 
-    public SpecialOrderBaseFragment() {
-        // Required empty public constructor
-    }
+    public SpecialOrderBaseFragment() {}
 
 
     @Override

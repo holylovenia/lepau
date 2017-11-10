@@ -1,5 +1,6 @@
 package com.kami.lepau;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -39,7 +40,13 @@ public class SpecialOrderActivity extends AppCompatActivity {
             fragmentManager.beginTransaction()
                     .replace(R.id.frameContainer, new SpecialOrderBaseFragment(), "BaseFragment")
                     .commit();
-
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
