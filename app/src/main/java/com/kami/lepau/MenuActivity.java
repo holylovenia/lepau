@@ -8,6 +8,7 @@ import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -28,6 +29,7 @@ public class MenuActivity extends AppCompatActivity {
     private OrderItemsAdapter mAdapter;
     private Button mOrderButton;
     private Button specialOrderButton;
+    private Parcelable recyclerViewState;
 
     private boolean backPressedOnce = false;
     private Handler handler = new Handler();
@@ -47,7 +49,7 @@ public class MenuActivity extends AppCompatActivity {
         mOrder = new Order();
 
         //Initialize the RecyclerView
-        mRecyclerView = (RecyclerView)findViewById(R.id.activityMenu_menuRecyclerView);
+        mRecyclerView = (RecyclerView) findViewById(R.id.activityMenu_menuRecyclerView);
 
         //Set the Layout Manager
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -56,10 +58,11 @@ public class MenuActivity extends AppCompatActivity {
 
         //Get the data
         if (savedInstanceState == null) {
+            Log.d("SaveInstanceState", "NULL");
             mRecyclerView.setAdapter(mAdapter);
             initializeData();
-        }
-        else {
+        } else {
+            Log.d("SaveInstanceState", "TIDAK NULL");
             Parcelable savedState = savedInstanceState.getParcelable(SAVED_STATE);
             mAdapter = new OrderItemsAdapter(mOrderItems, this);
             mRecyclerView.getLayoutManager().onRestoreInstanceState(savedState);
@@ -71,6 +74,11 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), SpecialOrderActivity.class);
+                int[] quantities = new int[mOrderItems.size()];
+                for(int i = 0; i < mOrderItems.size(); i++) {
+                    quantities[i] = mOrderItems.get(i).getQuantity();
+                }
+                intent.putExtra("mOrderItemQuantities", quantities);
                 startActivity(intent);
                 finish();
             }
@@ -82,10 +90,10 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ArrayList<OrderItem> normalOrderItems = mAdapter.getOrderItems();
                 OrderItem specialOrderItem = (OrderItem) getIntent().getSerializableExtra("SpecialOrder");
-                if(specialOrderItem != null) {
+                if (specialOrderItem != null) {
                     mOrder.addOrder(specialOrderItem);
                 }
-                for(int i = 0; i < normalOrderItems.size(); i++) {
+                for (int i = 0; i < normalOrderItems.size(); i++) {
                     mOrder.addOrder(normalOrderItems.get(i));
                 }
                 Intent intent = new Intent(v.getContext(), ShoppingCartActivity.class);
@@ -105,13 +113,20 @@ public class MenuActivity extends AppCompatActivity {
         String[] orderItemTitles = getResources().getStringArray(R.array.menu_titles);
         String[] orderItemDescriptions = getResources().getStringArray(R.array.menu_descriptions);
         int[] orderItemPrices = getResources().getIntArray(R.array.menu_prices);
+        int[] quantities = getIntent().getIntArrayExtra("OrderItemQuantities");
 
         //Clear the existing data (to avoid duplication)
         mOrderItems.clear();
 
         //Create the ArrayList of food objects with the titles and information about each sport
-        for(int i=0; i<orderItemTitles.length; i++){
-            mOrderItems.add(new OrderItem(orderItemTitles[i], orderItemDescriptions[i], orderItemPrices[i], 0, orderItemImageResources.getResourceId(i, 0)));
+        if(quantities == null) {
+            for (int i = 0; i < orderItemTitles.length; i++) {
+                mOrderItems.add(new OrderItem(orderItemTitles[i], orderItemDescriptions[i], orderItemPrices[i], 0, orderItemImageResources.getResourceId(i, 0)));
+            }
+        } else {
+            for (int i = 0; i < orderItemTitles.length; i++) {
+                mOrderItems.add(new OrderItem(orderItemTitles[i], orderItemDescriptions[i], orderItemPrices[i], quantities[i], orderItemImageResources.getResourceId(i, 0)));
+            }
         }
 
         //Notify the adapter of the change
@@ -122,10 +137,29 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        Parcelable state = mRecyclerView.getLayoutManager().onSaveInstanceState();
-        outState.putParcelable(SAVED_STATE, state);
+        recyclerViewState = mRecyclerView.getLayoutManager().onSaveInstanceState();
+        outState.putParcelable(SAVED_STATE, recyclerViewState);
     }
 
+    @Override
+    protected void onRestoreInstanceState(Bundle state) {
+        super.onRestoreInstanceState(state);
+
+        // Retrieve list state and list/item positions
+        if (state != null) {
+            Log.d("OnRestoreInstanceState", "state != null");
+            recyclerViewState = state.getParcelable(SAVED_STATE);
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (recyclerViewState != null) {
+            Log.d("OnResume", "recyclerViewState != null");
+            mRecyclerView.getLayoutManager().onRestoreInstanceState(recyclerViewState);
+        }
+    }
 
     @Override
     public void onDestroy() {

@@ -86,7 +86,7 @@ public class OrderItemsAdapter extends RecyclerView.Adapter<OrderItemsAdapter.Vi
                         quantity = 0;
                     }
                     orderItems.get(getAdapterPosition()).setQuantity(quantity);
-                    mQuantityText.setText(Integer.toString(quantity));
+                    mQuantityText.setText(String.valueOf(quantity));
                 }
             });
 
@@ -96,7 +96,7 @@ public class OrderItemsAdapter extends RecyclerView.Adapter<OrderItemsAdapter.Vi
                     int quantity = Integer.parseInt(mQuantityText.getText().toString());
                     quantity++;
                     orderItems.get(getAdapterPosition()).setQuantity(quantity);
-                    mQuantityText.setText(Integer.toString(quantity));
+                    mQuantityText.setText(String.valueOf(quantity));
                 }
             });
 

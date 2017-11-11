@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/mediumBrown"
+    tools:context="com.kami.lepau.FindingLocationActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="36sp"
+        android:layout_weight="3"
+        android:gravity="bottom"
+        android:text="Finding Location"
+        android:textStyle="bold"
+        android:textColor="@color/mocca"
+        android:textAlignment="center" />
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/activityFindingLocation_loadingIndicator"
+        style="@style/AVLoadingIndicatorView.Large"
+        android:layout_width="150dp"
+        android:padding="20dp"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_weight="4"
+        android:layout_gravity="center"
+        app:indicatorColor="@color/gold"
+        app:indicatorName="BallScaleRippleMultipleIndicator" />
+
+</LinearLayout>

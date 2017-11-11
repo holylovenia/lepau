@@ -243,8 +243,12 @@ public class SpecialOrderCompleteFragment extends Fragment {
                 orderItem.getSpecialOrderItem().setRiceType(riceType);
                 orderItem.getSpecialOrderItem().setSize(size);
                 orderItem.getSpecialOrderItem().setSpicinessLevel(spiceLevel);
+                int[] mOrderItemQuantities = getActivity().getIntent().getIntArrayExtra("mOrderItemQuantities");
                 Intent intent = new Intent(getActivity(), MenuActivity.class);
                 intent.putExtra("SpecialOrder", orderItem);
+                if(mOrderItemQuantities != null) {
+                    intent.putExtra("OrderItemQuantities", mOrderItemQuantities);
+                }
                 startActivity(intent);
                 getActivity().finish();
             }
