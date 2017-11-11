@@ -47,7 +47,7 @@
     <string name="title_activity_special_order">Lepau\'s Custom Fried Rice</string>
     <string name="action_settings">Settings</string>
 
-    <!-- Special OrderItem -->
+    <!-- SpecialOrder Activity -->
     <string name="so_status_base">BASE</string>
     <string name="so_status_topping">TOPPING</string>
     <string name="so_status_confirm">CONFIRM</string>
@@ -130,6 +130,16 @@
     <string name="so_topping_7">Topping (7)</string>
     <string name="so_topping_8">Topping (8)</string>
     <string name="so_topping_9">Topping (9)</string>
+
+    <!-- TrackingOrder Activity -->
+    <string name="to_status_waiting">WAITING</string>
+    <string name="to_status_cooking">COOKING</string>
+    <string name="to_status_delivering">DELIVERING</string>
+
+    <string name="to_status_waiting_info">Waiting for confirmation from our dapur</string>
+    <string name="to_status_cooking_info"></string>
+    <string name="to_status_delivering_info"></string>
+
     <string name="title_activity_main2">Main2Activity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

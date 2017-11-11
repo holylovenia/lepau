@@ -4,10 +4,64 @@
     android:layout_height="match_parent"
     tools:context="com.kami.lepau.TrackOrderAwaitingFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <LinearLayout
+        android:id="@+id/so_base_status"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mocca"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:orientation="vertical">
+
+        <SeekBar
+            android:id="@+id/so_base_status_seekbar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:thumb="@drawable/thumb_arrow"
+            android:thumbTint="@color/gold"
+            android:splitTrack="false"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:theme="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:progress="0"
+            android:max="2"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:text="@string/so_status_base"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/darkBrown"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/so_status_topping"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/darkBrown"
+                android:layout_weight="2"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="16dp"
+                android:text="@string/so_status_confirm"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/darkBrown"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </FrameLayout>

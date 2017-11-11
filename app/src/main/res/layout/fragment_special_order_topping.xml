@@ -9,7 +9,7 @@
         android:id="@+id/so_topping_status"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@color/mocca"
+        android:background="@color/darkBrown"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
         android:orientation="vertical">
@@ -39,7 +39,7 @@
                 android:text="@string/so_status_base"
                 android:textAlignment="center"
                 android:textSize="18sp"
-                android:textColor="@color/darkBrown"
+                android:textColor="@color/mocca"
                 android:layout_weight="1"/>
 
             <TextView
@@ -48,7 +48,7 @@
                 android:text="@string/so_status_topping"
                 android:textAlignment="center"
                 android:textSize="18sp"
-                android:textColor="@color/darkBrown"
+                android:textColor="@color/gold"
                 android:layout_weight="2"/>
 
             <TextView
@@ -58,25 +58,19 @@
                 android:text="@string/so_status_confirm"
                 android:textAlignment="center"
                 android:textSize="18sp"
-                android:textColor="@color/darkBrown"
+                android:textColor="@color/mocca"
                 android:layout_weight="1"/>
 
         </LinearLayout>
 
     </LinearLayout>
 
-    <View style="@style/LepauDivider.Thick"
-        android:id="@+id/so_base_init_divider"
-        android:layout_below="@id/so_topping_status"
-        android:layout_marginTop="0dp"
-        android:background="@color/darkBrown"/>
-
     <ScrollView
         android:id="@+id/so_topping_scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/so_topping_status"
-        android:paddingTop="24dp">
+        android:paddingTop="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"

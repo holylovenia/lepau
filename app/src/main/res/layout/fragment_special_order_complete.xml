@@ -9,7 +9,7 @@
         android:id="@+id/so_complete_status"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@color/mocca"
+        android:background="@color/darkBrown"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
         android:orientation="vertical">
@@ -39,7 +39,7 @@
                 android:text="@string/so_status_base"
                 android:textAlignment="center"
                 android:textSize="18sp"
-                android:textColor="@color/darkBrown"
+                android:textColor="@color/mocca"
                 android:layout_weight="1"/>
 
             <TextView
@@ -48,7 +48,7 @@
                 android:text="@string/so_status_topping"
                 android:textAlignment="center"
                 android:textSize="18sp"
-                android:textColor="@color/darkBrown"
+                android:textColor="@color/mocca"
                 android:layout_weight="2"/>
 
             <TextView
@@ -58,25 +58,19 @@
                 android:text="@string/so_status_confirm"
                 android:textAlignment="center"
                 android:textSize="18sp"
-                android:textColor="@color/darkBrown"
+                android:textColor="@color/gold"
                 android:layout_weight="1"/>
 
         </LinearLayout>
 
     </LinearLayout>
 
-    <View style="@style/LepauDivider.Thick"
-        android:id="@+id/so_complete_init_divider"
-        android:layout_below="@id/so_complete_status"
-        android:layout_marginTop="0dp"
-        android:background="@color/darkBrown"/>
-
     <ScrollView
         android:id="@+id/so_complete_scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="100dp"
-        android:layout_below="@id/so_complete_init_divider"
+        android:paddingTop="80dp"
+        android:layout_below="@id/so_complete_status"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true">
 
@@ -200,7 +194,9 @@
 
             </LinearLayout>
 
-            <View android:paddingStart="20dp" style="@style/LepauDivider.Thin" android:background="@color/gold"/>
+            <View android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                style="@style/LepauDivider.Thin" android:background="@color/gold"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -243,6 +239,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/so_complete_quantity"
                     android:textSize="24sp"
+                    android:textColor="@color/darkBrown"
                     android:layout_weight="2"/>
 
                 <LinearLayout
@@ -268,7 +265,6 @@
                         android:text="@string/so_complete_quantity_placeholder"
                         android:textAlignment="center"
                         android:textSize="18sp"
-                        android:inputType="number"
                         android:layout_weight="2"/>
 
                     <Button
@@ -296,6 +292,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/so_complete_total_price"
                     android:textSize="24sp"
+                    android:textColor="@color/darkBrown"
                     android:layout_weight="1"/>
 
                 <TextView
