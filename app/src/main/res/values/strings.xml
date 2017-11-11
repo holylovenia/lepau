@@ -126,5 +126,10 @@
     <string name="so_topping_7">Topping (7)</string>
     <string name="so_topping_8">Topping (8)</string>
     <string name="so_topping_9">Topping (9)</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_order_menu">OrderMenu</string>
 
 </resources>

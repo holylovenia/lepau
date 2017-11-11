@@ -1,67 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/mediumBrown"
-    android:padding="20dp"
-    tools:context="com.kami.lepau.MenuActivity">
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
 
-    <RelativeLayout
-        android:id="@+id/activityMenu_friedRiceCover"
+    <include
+        layout="@layout/content_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_order_menu"
+        app:menu="@menu/activity_order_menu_drawer" />
 
-        <ImageView
-            android:id="@+id/activityMenu_friedRiceIcon"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="-10dp"
-            android:src="@drawable/fried_rice" />
-
-        <Button
-            android:id="@+id/activityMenu_friedRiceButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/activityMenu_friedRiceIcon"
-            android:padding="16dp"
-            android:text="@string/make_your_own_fried_rice"
-            android:textAlignment="center"
-            android:textColor="@color/mediumBrown"
-            android:background="@drawable/order_button"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-    </RelativeLayout>
-
-    <Button
-        android:id="@+id/activityMenu_orderButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/order_button"
-        android:text="Order"
-        android:textAllCaps="true"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <RelativeLayout
-        android:id="@+id/activityOrder_menuRelativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:layout_above="@id/activityMenu_orderButton"
-        android:layout_below="@id/activityMenu_friedRiceCover"
-        android:background="@drawable/order_background"
-        android:padding="10dp">
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/activityMenu_menuRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </RelativeLayout>
-
-
-</RelativeLayout>
+</android.support.v4.widget.DrawerLayout>

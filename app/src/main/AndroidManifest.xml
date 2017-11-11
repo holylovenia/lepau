@@ -23,7 +23,7 @@
             android:name=".SpecialOrderActivity"
             android:label="@string/title_activity_special_order"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".FindingLocationActivity"></activity>
+        <activity android:name=".FindingLocationActivity" />
     </application>
 
 </manifest>
