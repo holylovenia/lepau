@@ -9,7 +9,7 @@
     android:layout_centerVertical="true">
 
     <FrameLayout
-        android:id="@+id/soFrameContainer"
+        android:id="@+id/toFrameContainer"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_centerHorizontal="true"

@@ -132,13 +132,15 @@
     <string name="so_topping_9">Topping (9)</string>
 
     <!-- TrackingOrder Activity -->
-    <string name="to_status_waiting">WAITING</string>
-    <string name="to_status_cooking">COOKING</string>
-    <string name="to_status_delivering">DELIVERING</string>
+    <string name="to_status_waiting">WAIT</string>
+    <string name="to_status_cooking">COOK</string>
+    <string name="to_status_delivering">DELIVER</string>
 
-    <string name="to_status_waiting_info">Waiting for confirmation from our dapur</string>
-    <string name="to_status_cooking_info"></string>
-    <string name="to_status_delivering_info"></string>
+    <string name="to_status_waiting_info">Waiting for confirmation from our Dapur</string>
+    <string name="to_status_cooking_info">Your order is being cooked</string>
+    <string name="to_status_delivering_info">Our driver is on the way</string>
+
+    <string name="to_confirm_delivery">Finish Order</string>
 
     <string name="title_activity_main2">Main2Activity</string>
 

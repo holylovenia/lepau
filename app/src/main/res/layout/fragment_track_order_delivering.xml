@@ -1,13 +1,116 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.kami.lepau.TrackOrderDeliveringFragment">
+    tools:context="com.kami.lepau.TrackOrderCookingFragment"
+    android:background="@color/beige">
 
-    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:id="@+id/to_delivering_status"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/darkBrown"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:orientation="vertical">
+
+        <SeekBar
+            android:id="@+id/to_delivering_status_seekbar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:thumb="@drawable/thumb_arrow"
+            android:thumbTint="@color/gold"
+            android:splitTrack="false"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:theme="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:progress="2"
+            android:max="2"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:text="@string/to_status_waiting"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/mocca"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/to_status_cooking"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/mocca"
+                android:layout_weight="2"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="16dp"
+                android:text="@string/to_status_delivering"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/gold"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/to_delivering_progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:scaleX="6"
+        android:scaleY="6"/>
+
+    <ImageView
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/simple_circle"
+        android:tint="@color/beige"/>
+
+    <ImageView
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:paddingEnd="10dp"
+        android:src="@drawable/to_delivering"
+        android:tint="@color/darkBrown"/>
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/to_delivering_progressbar"
+        android:paddingTop="120dp"
+        android:layout_margin="20dp"
+        android:text="@string/to_status_delivering_info"
+        android:textAlignment="center"
+        android:textSize="28sp"/>
 
-</FrameLayout>
+    <Button
+        android:id="@+id/to_delivering_confirm"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:background="@color/gold"
+        android:textSize="18sp"
+        android:text="@string/to_confirm_delivery"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

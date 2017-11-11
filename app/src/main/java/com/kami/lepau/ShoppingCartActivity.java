@@ -56,7 +56,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), MenuActivity.class);
+                Intent intent = new Intent(v.getContext(), TrackOrderActivity.class);
                 startActivity(intent);
                 finish();
             }
