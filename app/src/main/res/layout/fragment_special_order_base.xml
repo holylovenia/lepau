@@ -2,20 +2,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.kami.lepau.SpecialOrderBaseFragment">
+    tools:context="com.kami.lepau.SpecialOrderBaseFragment"
+    android:background="@color/beige">
 
-    <ImageView
+    <LinearLayout
         android:id="@+id/so_base_status"
-        android:contentDescription="@string/so_status"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@color/mocca"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:orientation="vertical">
+
+        <SeekBar
+            android:id="@+id/so_base_status_seekbar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:thumb="@drawable/thumb_arrow"
+            android:thumbTint="@color/gold"
+            android:splitTrack="false"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:theme="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:progress="0"
+            android:max="2"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:text="@string/so_status_base"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/darkBrown"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/so_status_topping"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/darkBrown"
+                android:layout_weight="2"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="16dp"
+                android:text="@string/so_status_confirm"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/darkBrown"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View style="@style/LepauDivider.Thick"
+        android:id="@+id/so_base_init_divider"
+        android:layout_below="@id/so_base_status"
+        android:layout_marginTop="0dp"
+        android:background="@color/darkBrown"/>
 
     <ScrollView
         android:id="@+id/so_base_scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:paddingTop="24dp"
+        android:paddingTop="100dp"
         android:layout_below="@id/so_base_status"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true">
@@ -25,87 +85,115 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="8dp"
-                android:textSize="24sp"
-                android:text="@string/so_rice"/>
+                android:layout_margin="16dp"
+                android:orientation="vertical">
 
-            <Spinner
-                android:id="@+id/so_base_spinner"
-                android:layout_width="fill_parent"
-                android:layout_marginBottom="8dp"
-                android:prompt="@string/so_spinner_prompt"
-                android:entries="@array/soSpinnerRiceItems"
-                style="@style/LepauSpinner"
-                android:layout_height="wrap_content" />
-
-            <View style="@style/LepauDivider"
-                android:backgroundTint="@color/gold"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:textSize="24sp"
-                android:text="@string/so_size"/>
-
-            <RadioGroup
-                android:id="@+id/so_base_radio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp">
-
-                <RadioButton
-                    android:id="@+id/so_base_radio_small"
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/so_small"
-                    android:checked="true"/>
+                    android:paddingBottom="8dp"
+                    android:textSize="24sp"
+                    android:textColor="@color/darkBrown"
+                    android:text="@string/so_rice"/>
 
-                <RadioButton
-                    android:id="@+id/so_base_radio_medium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/so_medium"/>
+                <Spinner
+                    android:id="@+id/so_base_spinner"
+                    android:layout_width="fill_parent"
+                    android:layout_marginBottom="8dp"
+                    android:prompt="@string/so_spinner_prompt"
+                    android:entries="@array/soSpinnerRiceItems"
+                    style="@style/LepauSpinner"
+                    android:layout_height="wrap_content" />
 
-                <RadioButton
-                    android:id="@+id/so_base_radio_large"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/so_large"/>
+            </LinearLayout>
 
-            </RadioGroup>
+            <View style="@style/LepauDivider.Thick"
+                android:background="@color/darkBrown"/>
 
-            <View style="@style/LepauDivider"
-                android:backgroundTint="@color/gold"/>
-
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:textSize="24sp"
-                android:text="@string/so_spiciness"/>
+                android:layout_margin="16dp"
+                android:orientation="vertical">
 
-            <SeekBar
-                android:id="@+id/so_base_seekbar"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="24sp"
+                    android:textColor="@color/darkBrown"
+                    android:text="@string/so_size"/>
+
+                <RadioGroup
+                    android:id="@+id/so_base_radio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp">
+
+                    <RadioButton
+                        android:id="@+id/so_base_radio_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/so_small"
+                        android:checked="true"/>
+
+                    <RadioButton
+                        android:id="@+id/so_base_radio_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/so_medium"/>
+
+                    <RadioButton
+                        android:id="@+id/so_base_radio_large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/so_large"/>
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <View style="@style/LepauDivider.Thick"
+                android:background="@color/darkBrown"/>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="20dp"
-                android:thumb="@drawable/thumb_chili"
-                android:thumbTint="@color/gold"
-                android:max="100"/>
+                android:layout_margin="16dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/so_base_spiciness_info"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/so_spiciness_default"
-                android:textSize="18sp"
-                android:textAlignment="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="24sp"
+                    android:textColor="@color/darkBrown"
+                    android:text="@string/so_spiciness"/>
+
+                <SeekBar
+                    android:id="@+id/so_base_seekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:thumb="@drawable/thumb_chili"
+                    android:thumbTint="@color/gold"
+                    android:splitTrack="false"
+                    android:max="100"/>
+
+                <TextView
+                    android:id="@+id/so_base_spiciness_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/so_spiciness_default"
+                    android:textSize="18sp"
+                    android:textAlignment="center"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 

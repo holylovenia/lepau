@@ -6,6 +6,7 @@ import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -24,7 +25,6 @@ public class SpecialOrderBaseFragment extends Fragment {
     private FragmentManager fragmentManager;
 
     private View view;
-    private ImageView ivStatus;
     private Spinner spRiceType;
     private RadioGroup rgSize;
     private RadioButton rbSmall;
@@ -33,6 +33,8 @@ public class SpecialOrderBaseFragment extends Fragment {
     private SeekBar sbSpiciness;
     private TextView tvSpiciness;
     private Button btnNext;
+
+    private SeekBar sbStatus;
 
     public SpecialOrderBaseFragment() {}
 
@@ -44,7 +46,6 @@ public class SpecialOrderBaseFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_special_order_base, container, false);
         fragmentManager = getActivity().getSupportFragmentManager();
 
-        ivStatus = (ImageView) view.findViewById(R.id.so_base_status);
         spRiceType = (Spinner) view.findViewById(R.id.so_base_spinner);
         rgSize = (RadioGroup) view.findViewById(R.id.so_base_radio);
         rbSmall = (RadioButton) view.findViewById(R.id.so_base_radio_small);
@@ -53,6 +54,15 @@ public class SpecialOrderBaseFragment extends Fragment {
         sbSpiciness = (SeekBar) view.findViewById(R.id.so_base_seekbar);
         tvSpiciness = (TextView) view.findViewById(R.id.so_base_spiciness_info);
         btnNext = (Button) view.findViewById(R.id.so_base_next);
+
+        sbStatus = (SeekBar) view.findViewById(R.id.so_base_status_seekbar);
+
+        sbStatus.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return true;
+            }
+        });
 
         rgSize.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -143,7 +153,7 @@ public class SpecialOrderBaseFragment extends Fragment {
 
                 fragmentManager.beginTransaction()
                         .setCustomAnimations(R.anim.right_enter, R.anim.left_exit)
-                        .replace(R.id.frameContainer, toppingFrag, "SpecialOrderToppingFragment")
+                        .replace(R.id.soFrameContainer, toppingFrag, "SpecialOrderToppingFragment")
                         .commit();
             }
         });

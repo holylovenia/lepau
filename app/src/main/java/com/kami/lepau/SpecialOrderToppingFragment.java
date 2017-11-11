@@ -1,18 +1,16 @@
 package com.kami.lepau;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.ImageView;
-
-import com.kami.lepau.R;
+import android.widget.SeekBar;
 
 import java.util.ArrayList;
 
@@ -39,6 +37,8 @@ public class SpecialOrderToppingFragment extends Fragment {
     private CheckBox cb8;
     private CheckBox cb9;
     private Button btnNext;
+
+    private SeekBar sbStatus;
 
     public SpecialOrderToppingFragment() {}
 
@@ -103,8 +103,17 @@ public class SpecialOrderToppingFragment extends Fragment {
 
                 fragmentManager.beginTransaction()
                         .setCustomAnimations(R.anim.right_enter, R.anim.left_exit)
-                        .replace(R.id.frameContainer, completeFrag, "SpecialOrderCompleteFragment")
+                        .replace(R.id.soFrameContainer, completeFrag, "SpecialOrderCompleteFragment")
                         .commit();
+            }
+        });
+
+        sbStatus = (SeekBar) view.findViewById(R.id.so_topping_status_seekbar);
+
+        sbStatus.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return true;
             }
         });
 

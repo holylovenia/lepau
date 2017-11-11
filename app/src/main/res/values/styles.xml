@@ -39,19 +39,24 @@
     </style>
 
     <style name="LepauDivider">
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">1dp</item>
         <item name="android:layout_marginTop">16dp</item>
         <item name="android:layout_marginBottom">16dp</item>
-        <item name="android:background">?android:attr/listDivider</item>
     </style>
 
     <style name="LepauDivider.Thin">
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">1dp</item>
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:layout_marginBottom">8dp</item>
-        <item name="android:background">?android:attr/listDivider</item>
+    </style>
+
+    <style name="LepauDivider.Thick">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
     </style>
 
 

@@ -26,10 +26,10 @@
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="5dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="5dp"
         android:background="@drawable/order_button"
-        android:text="Yes"
+        android:text="Order"
         android:textSize="20sp"
         android:textStyle="bold" />
 

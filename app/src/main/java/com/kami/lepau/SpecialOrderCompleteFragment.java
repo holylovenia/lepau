@@ -4,13 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,8 +41,10 @@ public class SpecialOrderCompleteFragment extends Fragment {
     private TextView tvToppingAmount;
     private TextView tvToppingPrice;
     private TextView tvItemPrice;
-    private EditText etItemQuantity;
+    private TextView tvItemQuantity;
     private TextView tvTotalPrice;
+
+    private SeekBar sbStatus;
 
     private Button btnInc;
     private Button btnDec;
@@ -78,7 +79,7 @@ public class SpecialOrderCompleteFragment extends Fragment {
         tvToppingAmount = (TextView) view.findViewById(R.id.so_complete_topping);
         tvToppingPrice = (TextView) view.findViewById(R.id.so_complete_topping_price);
         tvItemPrice = (TextView) view.findViewById(R.id.so_complete_item_price);
-        etItemQuantity = (EditText) view.findViewById(R.id.so_complete_quantity);
+        tvItemQuantity = (TextView) view.findViewById(R.id.so_complete_quantity);
         tvTotalPrice = (TextView) view.findViewById(R.id.so_complete_total_price);
 
         btnInc = (Button) view.findViewById(R.id.so_complete_inc_quantity);
@@ -189,34 +190,18 @@ public class SpecialOrderCompleteFragment extends Fragment {
         String itemPriceStr = "Rp" + String.valueOf(pricePerItem);
         tvItemPrice.setText(itemPriceStr);
 
-        quantity = Integer.parseInt(etItemQuantity.getText().toString());
+        quantity = Integer.parseInt(tvItemQuantity.getText().toString());
         String totalPriceStr = "Rp" + String.valueOf(pricePerItem * quantity);
         tvTotalPrice.setText(totalPriceStr);
-        etItemQuantity.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                quantity = Integer.valueOf(charSequence.toString());
-                String priceStr = "Rp" + String.valueOf(pricePerItem * quantity);
-                tvTotalPrice.setText(priceStr);
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
 
         btnInc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 quantity++;
                 String quantityStr = String.valueOf(quantity);
-                etItemQuantity.setText(quantityStr);
+                tvItemQuantity.setText(quantityStr);
+                String totalPriceStr = "Rp" + String.valueOf(quantity * pricePerItem);
+                tvTotalPrice.setText(totalPriceStr);
             }
         });
 
@@ -231,7 +216,10 @@ public class SpecialOrderCompleteFragment extends Fragment {
                     quantity--;
                 }
                 String quantityStr = String.valueOf(quantity);
-                etItemQuantity.setText(quantityStr);
+                tvItemQuantity.setText(quantityStr);
+
+                String totalPriceStr = "Rp" + String.valueOf(quantity * pricePerItem);
+                tvTotalPrice.setText(totalPriceStr);
             }
         });
 
@@ -254,6 +242,14 @@ public class SpecialOrderCompleteFragment extends Fragment {
             }
         });
 
+        sbStatus = (SeekBar) view.findViewById(R.id.so_complete_status_seekbar);
+
+        sbStatus.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return true;
+            }
+        });
 
         return view;
     }

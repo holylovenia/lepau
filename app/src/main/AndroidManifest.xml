@@ -24,6 +24,10 @@
             android:label="@string/title_activity_special_order"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".FindingLocationActivity" />
+        <activity
+            android:name=".TrackOrderActivity"
+            android:label="@string/title_activity_track_order"
+            android:theme="@style/AppThemeNoTitleBar"></activity>
     </application>
 
 </manifest>

@@ -48,6 +48,10 @@
     <string name="action_settings">Settings</string>
 
     <!-- Special OrderItem -->
+    <string name="so_status_base">BASE</string>
+    <string name="so_status_topping">TOPPING</string>
+    <string name="so_status_confirm">CONFIRM</string>
+
     <string name="so_next">Next</string>
     <string name="so_finish">Add to Order</string>
     <string name="so_cancel">Cancel</string>
@@ -131,5 +135,9 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_order_menu">OrderMenu</string>
+    <string name="title_activity_track_order">TrackOrderActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -2,31 +2,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.kami.lepau.SpecialOrderToppingFragment">
+    tools:context="com.kami.lepau.SpecialOrderToppingFragment"
+    android:background="@color/beige">
 
-    <ImageView
+    <LinearLayout
         android:id="@+id/so_topping_status"
-        android:contentDescription="@string/so_status"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@color/mocca"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:orientation="vertical">
+
+        <SeekBar
+            android:id="@+id/so_topping_status_seekbar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:thumb="@drawable/thumb_arrow"
+            android:thumbTint="@color/gold"
+            android:splitTrack="false"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:theme="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:progress="1"
+            android:max="2"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:text="@string/so_status_base"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/darkBrown"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/so_status_topping"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/darkBrown"
+                android:layout_weight="2"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="16dp"
+                android:text="@string/so_status_confirm"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/darkBrown"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View style="@style/LepauDivider.Thick"
+        android:id="@+id/so_base_init_divider"
+        android:layout_below="@id/so_topping_status"
+        android:layout_marginTop="0dp"
+        android:background="@color/darkBrown"/>
 
     <ScrollView
         android:id="@+id/so_topping_scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin">
+        android:layout_below="@id/so_topping_status"
+        android:paddingTop="24dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_margin="16dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="8dp"
                 android:textSize="24sp"
+                android:textColor="@color/darkBrown"
                 android:text="@string/so_topping"/>
 
             <CheckBox android:id="@+id/so_topping_scrambled_egg"

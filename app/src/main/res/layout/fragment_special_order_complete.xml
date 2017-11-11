@@ -2,21 +2,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.kami.lepau.SpecialOrderBaseFragment">
+    tools:context="com.kami.lepau.SpecialOrderBaseFragment"
+    android:background="@color/beige">
 
-    <ImageView
+    <LinearLayout
         android:id="@+id/so_complete_status"
-        android:contentDescription="@string/so_status"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@color/mocca"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:orientation="vertical">
+
+        <SeekBar
+            android:id="@+id/so_complete_status_seekbar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:thumb="@drawable/thumb_arrow"
+            android:thumbTint="@color/gold"
+            android:splitTrack="false"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:theme="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:progress="2"
+            android:max="2"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:text="@string/so_status_base"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/darkBrown"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/so_status_topping"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/darkBrown"
+                android:layout_weight="2"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="16dp"
+                android:text="@string/so_status_confirm"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/darkBrown"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View style="@style/LepauDivider.Thick"
+        android:id="@+id/so_complete_init_divider"
+        android:layout_below="@id/so_complete_status"
+        android:layout_marginTop="0dp"
+        android:background="@color/darkBrown"/>
 
     <ScrollView
         android:id="@+id/so_complete_scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:paddingTop="24dp"
-        android:layout_below="@id/so_complete_status"
+        android:paddingTop="100dp"
+        android:layout_below="@id/so_complete_init_divider"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true">
 
@@ -25,118 +85,128 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="8dp"
-                android:textSize="24sp"
-                android:text="@string/so_complete_order_header"/>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingStart="20dp"
-                android:orientation="horizontal">
+                android:layout_margin="16dp"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/so_complete_rice"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/so_complete_rice"
-                    android:textSize="18sp"
-                    android:layout_weight="3"/>
+                    android:paddingBottom="8dp"
+                    android:textSize="24sp"
+                    android:textColor="@color/darkBrown"
+                    android:text="@string/so_complete_order_header"/>
 
-                <TextView
-                    android:id="@+id/so_complete_rice_price"
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/so_complete_price_placeholder"
-                    android:textAlignment="textEnd"
-                    android:textSize="18sp"
-                    android:layout_weight="1"/>
+                    android:paddingStart="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/so_complete_rice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/so_complete_rice"
+                        android:textSize="18sp"
+                        android:layout_weight="3"/>
+
+                    <TextView
+                        android:id="@+id/so_complete_rice_price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/so_complete_price_placeholder"
+                        android:textAlignment="textEnd"
+                        android:textSize="18sp"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/so_complete_size"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/so_complete_size"
+                        android:textSize="18sp"
+                        android:layout_weight="3"/>
+
+                    <TextView
+                        android:id="@+id/so_complete_size_price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/so_complete_price_placeholder"
+                        android:textAlignment="textEnd"
+                        android:textSize="18sp"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/so_complete_spiciness"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/so_complete_spiciness"
+                        android:textSize="18sp"
+                        android:layout_weight="3"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/so_complete_price_placeholder"
+                        android:textAlignment="textEnd"
+                        android:textSize="18sp"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/so_complete_topping"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/so_complete_topping"
+                        android:textSize="18sp"
+                        android:layout_weight="3"/>
+
+                    <TextView
+                        android:id="@+id/so_complete_topping_price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/so_complete_price_placeholder"
+                        android:textAlignment="textEnd"
+                        android:textSize="18sp"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="20dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/so_complete_size"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/so_complete_size"
-                    android:textSize="18sp"
-                    android:layout_weight="3"/>
-
-                <TextView
-                    android:id="@+id/so_complete_size_price"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/so_complete_price_placeholder"
-                    android:textAlignment="textEnd"
-                    android:textSize="18sp"
-                    android:layout_weight="1"/>
-
-            </LinearLayout>
+            <View android:paddingStart="20dp" style="@style/LepauDivider.Thin" android:background="@color/gold"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="20dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/so_complete_spiciness"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/so_complete_spiciness"
-                    android:textSize="18sp"
-                    android:layout_weight="3"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/so_complete_price_placeholder"
-                    android:textAlignment="textEnd"
-                    android:textSize="18sp"
-                    android:layout_weight="1"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="20dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/so_complete_topping"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/so_complete_topping"
-                    android:textSize="18sp"
-                    android:layout_weight="3"/>
-
-                <TextView
-                    android:id="@+id/so_complete_topping_price"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/so_complete_price_placeholder"
-                    android:textAlignment="textEnd"
-                    android:textSize="18sp"
-                    android:layout_weight="1"/>
-
-            </LinearLayout>
-
-            <View android:paddingStart="20dp" style="@style/LepauDivider.Thin"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="20dp"
+                android:layout_marginEnd="16dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -157,11 +227,15 @@
 
             </LinearLayout>
 
-            <View style="@style/LepauDivider" android:background="@color/gold"/>
+            <View style="@style/LepauDivider.Thick"
+                android:layout_marginTop="16dp"
+                android:background="@color/darkBrown"/>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="16dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -187,7 +261,7 @@
                         android:textColor="@color/gold"
                         android:layout_weight="1" />
 
-                    <EditText
+                    <TextView
                         android:id="@+id/so_complete_quantity"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -214,7 +288,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_margin="16dp"
                 android:orientation="horizontal">
 
                 <TextView
