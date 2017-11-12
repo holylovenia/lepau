@@ -7,9 +7,9 @@
             android:icon="@drawable/ic_search_black_24dp"
             android:title="@string/search" />
         <item
-            android:id="@+id/nav_tracking_order"
-            android:icon="@drawable/ic_track_changes_black_24dp"
-            android:title="@string/tracking_order" />
+            android:id="@+id/nav_menu"
+            android:icon="@drawable/ic_restaurant_menu_black_24dp"
+            android:title="@string/menu_book" />
         <item
             android:id="@+id/nav_history"
             android:icon="@drawable/ic_history_black_24dp"

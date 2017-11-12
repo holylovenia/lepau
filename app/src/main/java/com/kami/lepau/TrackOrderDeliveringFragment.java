@@ -57,7 +57,7 @@ public class TrackOrderDeliveringFragment extends Fragment {
         ivIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent notificationIntent = new Intent(getActivity(), MainActivity.class);
+                Intent notificationIntent = new Intent(getActivity(), MenuActivity.class);
                 PendingIntent notificationPendingIntent = PendingIntent.getActivity(getContext(), NOTIFICATION_ID, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
                 String message = ("Delivery confirmed by manager, thank you for using Lepau");
@@ -91,7 +91,7 @@ public class TrackOrderDeliveringFragment extends Fragment {
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.cancel();
-                                Intent notificationIntent = new Intent(getActivity(), MainActivity.class);
+                                Intent notificationIntent = new Intent(getActivity(), MenuActivity.class);
                                 PendingIntent notificationPendingIntent = PendingIntent.getActivity(getContext(), NOTIFICATION_ID, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
                                 String message = ("Thank you for using Lepau");

@@ -138,5 +138,7 @@
     <string name="search">Search</string>
     <string name="tracking_order">Tracking Order</string>
     <string name="delivery_cost_price">2000</string>
+    <string name="menu_book">Menu List</string>
+    <string name="back_to_menu">Back to Menu</string>
 
 </resources>

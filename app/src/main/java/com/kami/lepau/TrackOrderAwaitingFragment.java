@@ -12,6 +12,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.NotificationCompat;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -50,7 +51,7 @@ public class TrackOrderAwaitingFragment extends Fragment {
         ivIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent notificationIntent = new Intent(getActivity(), MainActivity.class);
+                Intent notificationIntent = new Intent(getActivity(), MenuActivity.class);
                 PendingIntent notificationPendingIntent = PendingIntent.getActivity(getContext(), NOTIFICATION_ID, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
                 String message = ("Your order has been confirmed by our manager and is currently being prepared");

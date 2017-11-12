@@ -1,9 +1,12 @@
 package com.kami.lepau;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
 
 import com.kami.lepau.data.Order;
 import com.kami.lepau.data.OrderHistoryAdapter;
@@ -15,6 +18,8 @@ public class OrderHistoryActivity extends AppCompatActivity {
     private ArrayList<Order> mOrders;
     private RecyclerView mRecyclerView;
     private OrderHistoryAdapter mAdapter;
+
+    private Button btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +37,17 @@ public class OrderHistoryActivity extends AppCompatActivity {
         //Initialize the adapter and set it ot the RecyclerView
         mAdapter = new OrderHistoryAdapter(mOrders, this);
         mRecyclerView.setAdapter(mAdapter);
+
+        btnBack = (Button) findViewById(R.id.history_back_to_menu);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), MenuActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     private void initializeOrders() {

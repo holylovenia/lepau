@@ -100,12 +100,18 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
                     mOrder.addOrder(specialOrderItem);
                 }
                 for (int i = 0; i < normalOrderItems.size(); i++) {
-                    mOrder.addOrder(normalOrderItems.get(i));
+                    if (normalOrderItems.get(i).getQuantity() != 0) {
+                        mOrder.addOrder(normalOrderItems.get(i));
+                    }
                 }
-                Intent intent = new Intent(v.getContext(), ShoppingCartActivity.class);
-                intent.putExtra("Order", mOrder);
-                startActivity(intent);
-                finish();
+                if (mOrder.getAllOrders().isEmpty()) {
+                    Toast.makeText(getBaseContext(), "Your order is empty", Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent intent = new Intent(v.getContext(), ShoppingCartActivity.class);
+                    intent.putExtra("Order", mOrder);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
     }
@@ -202,8 +208,10 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.nav_search) {
             // Handle search action
-        } else if (id == R.id.nav_tracking_order) {
-            //TODO: tracking order tambahin di sini ya (rio)
+        } else if (id == R.id.nav_menu) {
+            Intent intent = new Intent(this, MenuActivity.class);
+            startActivity(intent);
+            finish();
         } else if (id == R.id.nav_history) {
             Intent intent = new Intent(this, OrderHistoryActivity.class);
             startActivity(intent);
