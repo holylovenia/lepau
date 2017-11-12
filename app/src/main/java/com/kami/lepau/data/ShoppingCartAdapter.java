@@ -77,9 +77,9 @@ public class ShoppingCartAdapter extends RecyclerView.Adapter<ShoppingCartAdapte
             //Populate the textviews with data
             Log.d("BIND TO", currentOrderItem.getItemName());
             mTitleText.setText(currentOrderItem.getItemName());
-            mQuantityText.setText(Integer.toString(currentOrderItem.getQuantity()));
-            mPriceText.setText(Integer.toString(currentOrderItem.getPricePerItem()));
-            mSubtotalText.setText(Integer.toString(currentOrderItem.getTotalPrice()));
+            mQuantityText.setText(String.valueOf(currentOrderItem.getQuantity()));
+            mPriceText.setText(String.valueOf(currentOrderItem.getPricePerItem()));
+            mSubtotalText.setText(String.valueOf(currentOrderItem.getTotalPrice()));
         }
 
         @Override

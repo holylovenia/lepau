@@ -205,7 +205,9 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_tracking_order) {
             //TODO: tracking order tambahin di sini ya (rio)
         } else if (id == R.id.nav_history) {
-            //TODO: panggil action history (holy)
+            Intent intent = new Intent(this, OrderHistoryActivity.class);
+            startActivity(intent);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

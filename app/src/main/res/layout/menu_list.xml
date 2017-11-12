@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@id/menuList_menuPicture"
-            android:text="Menu Title"
+            android:text="@string/menu_title"
             android:textColor="@color/mediumBrown"
             android:textSize="28sp"
             android:textStyle="bold" />
@@ -41,7 +41,7 @@
             android:paddingBottom="15dp"
             android:paddingTop="5dp"
             android:paddingRight="10dp"
-            android:text="Menu Description"
+            android:text="@string/menu_description"
             android:textColor="@color/mocca"
             android:textSize="14sp" />
 
@@ -52,7 +52,7 @@
             android:layout_below="@id/menuList_menuPicture"
             android:layout_alignParentBottom="true"
             android:layout_marginTop="10dp"
-            android:text="Price: Rp"
+            android:text="@string/price_rp"
             android:textColor="@color/mocca" />
 
         <TextView
@@ -64,7 +64,6 @@
             android:layout_marginLeft="2dp"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/menuList_menuPriceLabel"
-            android:text="10000"
             android:textColor="@color/mocca" />
 
         <LinearLayout
@@ -81,7 +80,7 @@
                 android:layout_width="30dp"
                 android:layout_height="25dp"
                 android:background="@color/mediumBrown"
-                android:text="-"
+                android:text="@string/decrement"
                 android:textColor="@color/gold"
                 android:textSize="20sp" />
 
@@ -91,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
-                android:text="0"
+                android:text="@string/zero"
                 android:textStyle="bold" />
 
             <Button
@@ -99,7 +98,7 @@
                 android:layout_width="30dp"
                 android:layout_height="25dp"
                 android:background="@color/mediumBrown"
-                android:text="+"
+                android:text="@string/increment"
                 android:textColor="@color/gold"
                 android:textSize="20sp" />
 
