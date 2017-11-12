@@ -132,6 +132,8 @@
     <string name="so_topping_9">Topping (9)</string>
 
     <!-- TrackingOrder Activity -->
+    <string name="to_desc">Image Description</string>
+
     <string name="to_status_waiting">WAIT</string>
     <string name="to_status_cooking">COOK</string>
     <string name="to_status_delivering">DELIVER</string>

@@ -78,14 +78,17 @@
     <ImageView
         android:layout_width="230dp"
         android:layout_height="230dp"
+        android:contentDescription="@string/to_desc"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:src="@drawable/simple_circle"
         android:tint="@color/beige"/>
 
     <ImageView
+        android:id="@+id/to_delivering_icon"
         android:layout_width="170dp"
         android:layout_height="170dp"
+        android:contentDescription="@string/to_desc"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:paddingEnd="10dp"
@@ -96,8 +99,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/to_delivering_progressbar"
-        android:paddingTop="120dp"
-        android:layout_margin="20dp"
+        android:paddingTop="100dp"
+        android:layout_margin="30dp"
         android:text="@string/to_status_delivering_info"
         android:textAlignment="center"
         android:textSize="28sp"/>
