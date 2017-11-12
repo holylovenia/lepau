@@ -1,7 +1,9 @@
 package com.kami.lepau.data;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Order contains a list of ordered items from Lepau.
@@ -10,8 +12,11 @@ import java.util.ArrayList;
  */
 public class Order implements Serializable{
     private ArrayList<OrderItem> orders;
+    private String date;
 
     public Order() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEE, d MMM yyyy");
+        date = simpleDateFormat.format(new Date());
         orders = new ArrayList<>();
     }
 
@@ -37,5 +42,17 @@ public class Order implements Serializable{
             total += orders.get(i).getTotalPrice();
         }
         return total;
+    }
+
+    public String getOrdersInString() {
+        String ordersInString = "";
+        for(int i = 0; i < orders.size(); i++) {
+            ordersInString += orders.get(i).getQuantity() + " " + orders.get(i).getItemName() + "\n";
+        }
+        return ordersInString;
+    }
+
+    public String getDate() {
+        return date;
     }
 }

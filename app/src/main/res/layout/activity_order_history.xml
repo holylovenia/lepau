@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mediumBrown"
+    android:padding="20dp"
+    tools:context="com.kami.lepau.OrderHistoryActivity">
+
+    <LinearLayout
+        android:id="@+id/activityOrderHistory_orderHistoryLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/order_background"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/order_history"
+            android:textSize="32sp"
+            android:paddingBottom="20dp"
+            android:textColor="@color/mediumBrown"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/activityOrderHistory_orderHistoryRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</RelativeLayout>

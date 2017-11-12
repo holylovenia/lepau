@@ -9,7 +9,6 @@
         android:roundIcon="@drawable/lepau_plate_transparent"
         android:supportsRtl="true"
         android:theme="@style/AppThemeNoTitleBar">
-        <activity android:name=".MainActivity" />
         <activity android:name=".AuthenticationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +26,8 @@
         <activity
             android:name=".TrackOrderActivity"
             android:label="@string/title_activity_track_order"
-            android:theme="@style/AppThemeNoTitleBar"></activity>
+            android:theme="@style/AppThemeNoTitleBar" />
+        <activity android:name=".OrderHistoryActivity"></activity>
     </application>
 
 </manifest>

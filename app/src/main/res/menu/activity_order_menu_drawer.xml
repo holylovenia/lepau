@@ -5,15 +5,15 @@
         <item
             android:id="@+id/nav_search"
             android:icon="@drawable/ic_search_black_24dp"
-            android:title="Search" />
+            android:title="@string/search" />
         <item
             android:id="@+id/nav_tracking_order"
             android:icon="@drawable/ic_track_changes_black_24dp"
-            android:title="Tracking Order" />
+            android:title="@string/tracking_order" />
         <item
             android:id="@+id/nav_history"
             android:icon="@drawable/ic_history_black_24dp"
-            android:title="History" />
+            android:title="@string/order_history" />
     </group>
 
 </menu>

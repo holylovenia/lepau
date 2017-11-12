@@ -14,7 +14,7 @@
         android:textSize="36sp"
         android:layout_weight="3"
         android:gravity="bottom"
-        android:text="Finding Location"
+        android:text="@string/finding_location"
         android:textStyle="bold"
         android:textColor="@color/mocca"
         android:textAlignment="center" />
