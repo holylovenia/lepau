@@ -6,15 +6,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/darkBrown"
-    tools:context="com.kami.lepau.FindingLocationActivity">
+    tools:context="com.kami.lepau.SearchActivity">
 
     <TextView
+        android:id="@+id/sa_search_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="36sp"
         android:layout_weight="3"
         android:gravity="bottom"
-        android:text="@string/finding_location"
+        android:text="@string/searching_menu"
         android:textStyle="bold"
         android:textColor="@color/mocca"
         android:textAlignment="center" />

@@ -11,6 +11,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -34,6 +35,8 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
     private Button mOrderButton;
     private Button specialOrderButton;
     private Parcelable recyclerViewState;
+
+    private SearchView svMenu;
 
     private boolean backPressedOnce = false;
     private Handler handler = new Handler();
@@ -74,6 +77,26 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
             mRecyclerView.getLayoutManager().onRestoreInstanceState(savedState);
             mAdapter.notifyDataSetChanged();
         }
+
+        svMenu = (SearchView) findViewById(R.id.menu_search_bar);
+        svMenu.setFocusable(false);
+        svMenu.setIconified(false);
+        svMenu.clearFocus();
+        svMenu.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Intent intent = new Intent(getBaseContext(), SearchActivity.class);
+                intent.putExtra("query", svMenu.getQuery().toString());
+                startActivity(intent);
+                finish();
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
 
         specialOrderButton = (Button) findViewById(R.id.activityMenu_friedRiceButton);
         specialOrderButton.setOnClickListener(new View.OnClickListener() {
@@ -187,17 +210,15 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
-        }
+            if (backPressedOnce) {
+                finishAffinity();
+                return;
+            }
+            backPressedOnce = true;
+            Toast.makeText(this, "Press back again to leave", Toast.LENGTH_SHORT).show();
 
-        if (backPressedOnce) {
-            finishAffinity();
-            return;
+            handler.postDelayed(runnable, 2000);
         }
-        backPressedOnce = true;
-        Toast.makeText(this, "Press back again to leave", Toast.LENGTH_SHORT).show();
-
-        handler.postDelayed(runnable, 2000);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -206,9 +227,7 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_search) {
-            // Handle search action
-        } else if (id == R.id.nav_menu) {
+        if (id == R.id.nav_menu) {
             Intent intent = new Intent(this, MenuActivity.class);
             startActivity(intent);
             finish();

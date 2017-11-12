@@ -115,9 +115,10 @@
     <string name="title_activity_order_menu">OrderMenu</string>
     <string name="title_activity_track_order">TrackOrderActivity</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sa_hint">What would you like to eat?</string>
+
     <string name="finding_location">Finding Location</string>
+    <string name="searching_menu">Searching for menu</string>
     <string name="order_history">Order History</string>
     <string name="cancel">Cancel</string>
     <string name="order">Order</string>

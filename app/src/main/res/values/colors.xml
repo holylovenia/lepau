@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="gold">#FFC107</color>
-    <color name="darkBrown">#292319</color>
+    <color name="darkBrown">#291f19</color>
     <color name="beige">#F5F5DB</color>
     <color name="mocca">#A68E5C</color>
     <color name="white">#FFFFFF</color>
