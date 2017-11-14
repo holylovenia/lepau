@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Parcelable;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -104,7 +105,7 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), SpecialOrderActivity.class);
                 int[] quantities = new int[mOrderItems.size()];
-                for(int i = 0; i < mOrderItems.size(); i++) {
+                for (int i = 0; i < mOrderItems.size(); i++) {
                     quantities[i] = mOrderItems.get(i).getQuantity();
                 }
                 intent.putExtra("mOrderItemQuantities", quantities);
@@ -154,7 +155,7 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
         mOrderItems.clear();
 
         //Create the ArrayList of food objects with the titles and information about each sport
-        if(quantities == null) {
+        if (quantities == null) {
             for (int i = 0; i < orderItemTitles.length; i++) {
                 mOrderItems.add(new OrderItem(orderItemTitles[i], orderItemDescriptions[i], orderItemPrices[i], 0, orderItemImageResources.getResourceId(i, 0)));
             }
@@ -223,18 +224,33 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        Intent intent;
 
-        if (id == R.id.nav_menu) {
-            Intent intent = new Intent(this, MenuActivity.class);
-            startActivity(intent);
-            finish();
-        } else if (id == R.id.nav_history) {
-            Intent intent = new Intent(this, OrderHistoryActivity.class);
-            startActivity(intent);
-            finish();
+        switch(id) {
+            case R.id.nav_menu:
+                intent = new Intent(this, MenuActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.nav_history:
+                intent = new Intent(this, OrderHistoryActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.dapur_dipatiukur:
+                item.setChecked(true);
+                break;
+            case R.id.dapur_cisitu:
+                item.setChecked(true);
+                break;
+            case R.id.dapur_pelesiran:
+                item.setChecked(true);
+                break;
+            default:
+                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -13,6 +13,7 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
+        android:id="@+id/preferred_dapur"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:background="@drawable/lepau_cover_background"

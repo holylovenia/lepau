@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="soSpinnerRiceItems">
-        <item>White rice (10k)</item>
-        <item>Jasmine rice (12k)</item>
-        <item>Brown rice (14k)</item>
-        <item>Sticky rice (14k)</item>
+        <item>@string/white_rice</item>
+        <item>@string/jasmine_rice</item>
+        <item>@string/brown_rice</item>
+        <item>@string/sticky_rice</item>
     </string-array>
 
     <string-array name="menu_titles">
-        <item>Bacon and Eggs</item>
-        <item>Curry</item>
-        <item>Indomie</item>
-        <item>Ketupat</item>
-        <item>Omelette</item>
-        <item>French Toast</item>
+        <item>@string/bacon_eggs</item>
+        <item>@string/curry</item>
+        <item>@string/indomie</item>
+        <item>@string/ketupat</item>
+        <item>@string/omelette</item>
+        <item>@string/french_toast</item>
     </string-array>
 
     <string-array name="menu_descriptions">
-        <item>Is there any better start to the day than bacon and eggs?</item>
-        <item>Savory and hearty Japanese beef curry recipe made with beef, potatoes, carrots, mushroom, and Japanese curry roux.</item>
-        <item>Instant Noodles are made from carefully selected ingredients, the best quality flour and fresh spices from the natural resources of Indonesia.</item>
-        <item>One of the most popular Malaysian traditional delicacies made from glutinous rice.</item>
-        <item>Our omelettes look like they are made-to-order because they are - with eggs filled with your choice of fresh vegetables, meats and cheeses and rolled.</item>
-        <item>Slices of bread are soaked or dipped in a mixture of beaten eggs, often whisked with milk or cream.</item>
+        <item>@string/bacon_eggs_desc</item>
+        <item>@string/curry</item>
+        <item>@string/indomie_desc</item>
+        <item>@string/ketupat_desc</item>
+        <item>@string/omelette_desc</item>
+        <item>@string/french_toast_desc</item>
     </string-array>
 
     <integer-array name="menu_prices">

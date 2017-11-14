@@ -141,5 +141,29 @@
     <string name="delivery_cost_price">2000</string>
     <string name="menu_book">Menu List</string>
     <string name="back_to_menu">Back to Menu</string>
+    <string name="dipatiukur">Dipatiukur</string>
+    <string name="cisitu">Cisitu</string>
+    <string name="pelesiran">Pelesiran</string>
+    <string name="preferred_dapur">Preferred Kitchen</string>
+    <string name="general">General</string>
+
+    <string name="white_rice">White rice (10k)</string>
+    <string name="jasmine_rice">Jasmine rice (12k)</string>
+    <string name="brown_rice">Brown rice (14k)</string>
+    <string name="sticky_rice">Sticky rice (14k)</string>
+
+    <string name="bacon_eggs">Bacon and Eggs</string>
+    <string name="curry">Curry</string>
+    <string name="indomie">Indomie</string>
+    <string name="ketupat">Ketupat</string>
+    <string name="omelette">Omelette</string>
+    <string name="french_toast">French Toast</string>
+
+    <string name="bacon_eggs_desc">Is there any better start to the day than bacon and eggs?</string>
+    <string name="curry_desc">Savory and hearty Japanese beef curry recipe made with beef, potatoes, carrots, mushroom, and Japanese curry roux.</string>
+    <string name="indomie_desc">Instant Noodles are made from carefully selected ingredients, the best quality flour and fresh spices from the natural resources of Indonesia.</string>
+    <string name="ketupat_desc">One of the most popular Malaysian traditional delicacies made from glutinous rice.</string>
+    <string name="omelette_desc">Our omelettes look like they are made-to-order because they are - with eggs filled with your choice of fresh vegetables, meats and cheeses and rolled.</string>
+    <string name="french_toast_desc">Slices of bread are soaked or dipped in a mixture of beaten eggs, often whisked with milk or cream.</string>
 
 </resources>

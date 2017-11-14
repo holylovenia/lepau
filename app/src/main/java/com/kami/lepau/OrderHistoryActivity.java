@@ -52,12 +52,12 @@ public class OrderHistoryActivity extends AppCompatActivity {
 
     private void initializeOrders() {
         Order dummyOrder = new Order();
-        dummyOrder.addOrder(new OrderItem("Bacon and Eggs", "", 20000, 3, -999));
-        dummyOrder.addOrder(new OrderItem("Ketupat", "", 15000, 5, -999));
-        dummyOrder.addOrder(new OrderItem("Omelette", "", 40000, 2, -999));
+        dummyOrder.addOrder(new OrderItem(getString(R.string.bacon_eggs), "", 20000, 3, -999));
+        dummyOrder.addOrder(new OrderItem(getString(R.string.ketupat), "", 15000, 5, -999));
+        dummyOrder.addOrder(new OrderItem(getString(R.string.omelette), "", 40000, 2, -999));
         Order dummyOrder2 = new Order();
-        dummyOrder2.addOrder(new OrderItem("Indomie", "", 10000, 4, -999));
-        dummyOrder2.addOrder(new OrderItem("French Toast", "", 25000, 7, -999));
+        dummyOrder2.addOrder(new OrderItem(getString(R.string.indomie), "", 10000, 4, -999));
+        dummyOrder2.addOrder(new OrderItem(getString(R.string.french_toast), "", 25000, 7, -999));
         mOrders = new ArrayList<>();
         mOrders.add(dummyOrder);
         mOrders.add(dummyOrder2);

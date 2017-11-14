@@ -1,15 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_menu"
-            android:icon="@drawable/ic_restaurant_menu_black_24dp"
-            android:title="@string/menu_book" />
-        <item
-            android:id="@+id/nav_history"
-            android:icon="@drawable/ic_history_black_24dp"
-            android:title="@string/order_history" />
-    </group>
+    <item android:title="@string/general">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_menu"
+                    android:icon="@drawable/ic_restaurant_menu_black_24dp"
+                    android:title="@string/menu_book" />
+                <item
+                    android:id="@+id/nav_history"
+                    android:icon="@drawable/ic_history_black_24dp"
+                    android:title="@string/order_history" />
+            </group>
+        </menu>
+    </item>
 
+    <item android:title="@string/preferred_dapur">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/dapur_dipatiukur"
+                    android:icon="@drawable/ic_favorite_black_24dp"
+                    android:title="@string/dipatiukur" />
+                <item
+                    android:id="@+id/dapur_cisitu"
+                    android:icon="@drawable/ic_favorite_black_24dp"
+                    android:title="@string/cisitu" />
+                <item
+                    android:id="@+id/dapur_pelesiran"
+                    android:icon="@drawable/ic_favorite_black_24dp"
+                    android:title="@string/pelesiran" />
+            </group>
+        </menu>
+    </item>
 </menu>
