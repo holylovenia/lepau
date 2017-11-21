@@ -142,4 +142,14 @@
     <string name="omelette_desc">Omelet kami terlihat siap diantar karena mereka memang siap untuk diantar - dengan telur berisi sayuran pilihan, daging, dan keju yang lumer di lidah.</string>
     <string name="white_rice">Nasi putih (10k)</string>
     <string name="sticky_rice">Nasi lekat (14k)</string>
+    <string name="delivery_confirmed">Pengantaran sudah dikonfirmasi oleh manajer, terima kasih telah menggunakan Lepau</string>
+    <string name="enjoy_your_meal">Silahkan Nikmati Santapan Anda!</string>
+    <string name="have_you_received_your_order">Sudahkah kamu menerima pesananmu?</string>
+    <string name="not_yet">Belum</string>
+    <string name="press_back_again_to_leave">Tekan kembali lagi untuk meninggalkan aplikasi</string>
+    <string name="searching_for">"Sedang mencari "</string>
+    <string name="thank_you_for_using_lepau">Terima kasih sudah menggunakan Lepau</string>
+    <string name="quantity_cant_be_negative">Kuantitas tidak bisa bernilai negatif</string>
+    <string name="yes">Sudah</string>
+    <string name="your_order_is_empty">Anda tidak memiliki pesanan</string>
 </resources>

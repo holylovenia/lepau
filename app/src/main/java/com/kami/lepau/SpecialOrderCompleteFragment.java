@@ -88,54 +88,60 @@ public class SpecialOrderCompleteFragment extends Fragment {
 
         // Show order data
         // Rice Type
-        if (riceType.equals("White rice")) {
-            tvRiceType.setText(R.string.so_ricetype_white);
-            int price = 10000;
-            pricePerItem += price;
-            String priceStr = "Rp" + String.valueOf(price);
-            tvRicePrice.setText(priceStr);
-        }
-        else if (riceType.equals("Jasmine rice")) {
-            tvRiceType.setText(R.string.so_ricetype_jasmine);
-            int price = 12000;
-            pricePerItem += price;
-            String priceStr = "Rp" + String.valueOf(price);
-            tvRicePrice.setText(priceStr);
-        }
-        else if (riceType.equals("Brown rice")) {
-            tvRiceType.setText(R.string.so_ricetype_brown);
-            int price = 14000;
-            pricePerItem += price;
-            String priceStr = "Rp" + String.valueOf(price);
-            tvRicePrice.setText(priceStr);
-        }
-        else {
-            tvRiceType.setText(R.string.so_ricetype_sticky);
-            int price = 14000;
-            pricePerItem += price;
-            String priceStr = "Rp" + String.valueOf(price);
-            tvRicePrice.setText(priceStr);
+        switch (riceType) {
+            case "White rice": {
+                tvRiceType.setText(R.string.so_ricetype_white);
+                int price = 10000;
+                pricePerItem += price;
+                String priceStr = getString(R.string.rp) + String.valueOf(price);
+                tvRicePrice.setText(priceStr);
+                break;
+            }
+            case "Jasmine rice": {
+                tvRiceType.setText(R.string.so_ricetype_jasmine);
+                int price = 12000;
+                pricePerItem += price;
+                String priceStr = getString(R.string.rp) + String.valueOf(price);
+                tvRicePrice.setText(priceStr);
+                break;
+            }
+            case "Brown rice": {
+                tvRiceType.setText(R.string.so_ricetype_brown);
+                int price = 14000;
+                pricePerItem += price;
+                String priceStr = getString(R.string.rp) + String.valueOf(price);
+                tvRicePrice.setText(priceStr);
+                break;
+            }
+            default: {
+                tvRiceType.setText(R.string.so_ricetype_sticky);
+                int price = 14000;
+                pricePerItem += price;
+                String priceStr = getString(R.string.rp) + String.valueOf(price);
+                tvRicePrice.setText(priceStr);
+                break;
+            }
         }
 
         // Size
-        if (size.equals("Small")) {
+        if (size.equals(getString(R.string.so_size_small))) {
             tvSize.setText(R.string.so_size_small);
             int price = 0;
             pricePerItem += price;
-            String priceStr = "Rp" + String.valueOf(price);
+            String priceStr = getString(R.string.rp) + String.valueOf(price);
             tvSizePrice.setText(priceStr);
         }
-        else if (size.equals("Medium")) {
+        else if (size.equals(getString(R.string.so_size_medium))) {
             tvSize.setText(R.string.so_size_medium);
             int price = 3000;
             pricePerItem += price;
-            String priceStr = "Rp" + String.valueOf(price);
+            String priceStr = getString(R.string.rp) + String.valueOf(price);
             tvSizePrice.setText(priceStr);
         } else {
             tvSize.setText(R.string.so_size_large);
             int price = 5000;
             pricePerItem += price;
-            String priceStr = "Rp" + String.valueOf(price);
+            String priceStr = getString(R.string.rp) + String.valueOf(price);
             tvSizePrice.setText(priceStr);
         }
 
@@ -184,14 +190,14 @@ public class SpecialOrderCompleteFragment extends Fragment {
 
         int price = 3000 * toppingAmount;
         pricePerItem += price;
-        String priceStr = "Rp" + String.valueOf(price);
+        String priceStr = getString(R.string.rp) + String.valueOf(price);
         tvToppingPrice.setText(priceStr);
 
-        String itemPriceStr = "Rp" + String.valueOf(pricePerItem);
+        String itemPriceStr = getString(R.string.rp) + String.valueOf(pricePerItem);
         tvItemPrice.setText(itemPriceStr);
 
         quantity = Integer.parseInt(tvItemQuantity.getText().toString());
-        String totalPriceStr = "Rp" + String.valueOf(pricePerItem * quantity);
+        String totalPriceStr = getString(R.string.rp) + String.valueOf(pricePerItem * quantity);
         tvTotalPrice.setText(totalPriceStr);
 
         btnInc.setOnClickListener(new View.OnClickListener() {
@@ -200,7 +206,7 @@ public class SpecialOrderCompleteFragment extends Fragment {
                 quantity++;
                 String quantityStr = String.valueOf(quantity);
                 tvItemQuantity.setText(quantityStr);
-                String totalPriceStr = "Rp" + String.valueOf(quantity * pricePerItem);
+                String totalPriceStr = getString(R.string.rp) + String.valueOf(quantity * pricePerItem);
                 tvTotalPrice.setText(totalPriceStr);
             }
         });
@@ -210,7 +216,7 @@ public class SpecialOrderCompleteFragment extends Fragment {
             public void onClick(View v) {
                 if (quantity <= 0) {
                     quantity = 0;
-                    Toast.makeText(getActivity(), "Quantity can't be negative", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.quantity_cant_be_negative, Toast.LENGTH_SHORT).show();
                 }
                 else {
                     quantity--;
@@ -218,7 +224,7 @@ public class SpecialOrderCompleteFragment extends Fragment {
                 String quantityStr = String.valueOf(quantity);
                 tvItemQuantity.setText(quantityStr);
 
-                String totalPriceStr = "Rp" + String.valueOf(quantity * pricePerItem);
+                String totalPriceStr = getString(R.string.rp) + String.valueOf(quantity * pricePerItem);
                 tvTotalPrice.setText(totalPriceStr);
             }
         });

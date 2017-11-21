@@ -87,4 +87,9 @@
 
     </RelativeLayout>
 
+    <ImageView
+        android:layout_width="30dp"
+        android:src="@drawable/glow"
+        android:layout_height="match_parent" />
+
 </RelativeLayout>

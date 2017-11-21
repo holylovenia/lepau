@@ -104,4 +104,16 @@
         android:textAlignment="center"
         android:textSize="28sp"/>
 
+    <Button
+        android:id="@+id/to_awaiting_cancel_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="-15dp"
+        android:background="@drawable/order_button_cropped_top"
+        android:text="@string/cancel"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
 </RelativeLayout>

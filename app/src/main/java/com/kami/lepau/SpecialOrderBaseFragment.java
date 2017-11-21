@@ -10,7 +10,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
@@ -132,13 +131,13 @@ public class SpecialOrderBaseFragment extends Fragment {
 
                 String size;
                 if (index == 0) {
-                    size = "Small";
+                    size = getString(R.string.so_small);
                 }
                 else if (index == 1) {
-                    size = "Medium";
+                    size = getString(R.string.so_medium);
                 }
                 else {
-                    size = "Large";
+                    size = getString(R.string.so_large);
                 }
 
                 int spiceLevel = sbSpiciness.getProgress()/20;

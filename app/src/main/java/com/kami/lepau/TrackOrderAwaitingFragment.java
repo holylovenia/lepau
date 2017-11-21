@@ -12,9 +12,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.NotificationCompat;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
@@ -32,6 +32,7 @@ public class TrackOrderAwaitingFragment extends Fragment {
 
     private View view;
     private ImageView ivIcon;
+    private Button cancelButton;
 
     public TrackOrderAwaitingFragment() {}
 
@@ -46,6 +47,15 @@ public class TrackOrderAwaitingFragment extends Fragment {
         notifyManager = (NotificationManager) getActivity().getSystemService(NOTIFICATION_SERVICE);
         notifyReceiver = new NotificationReceiver();
         getActivity().registerReceiver(notifyReceiver, new IntentFilter(ACTION_UPDATE_NOTIFICATION));
+
+        cancelButton = (Button) view.findViewById(R.id.to_awaiting_cancel_button);
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MenuActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         ivIcon.setOnClickListener(new View.OnClickListener() {

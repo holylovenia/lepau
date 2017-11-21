@@ -165,5 +165,15 @@
     <string name="ketupat_desc">One of the most popular Malaysian traditional delicacies made from glutinous rice.</string>
     <string name="omelette_desc">Our omelettes look like they are made-to-order because they are - with eggs filled with your choice of fresh vegetables, meats and cheeses and rolled.</string>
     <string name="french_toast_desc">Slices of bread are soaked or dipped in a mixture of beaten eggs, often whisked with milk or cream.</string>
+    <string name="press_back_again_to_leave">Press back again to leave</string>
+    <string name="your_order_is_empty">Your order is empty</string>
+    <string name="searching_for">"Searching for "</string>
+    <string name="quantity_cant_be_negative">Quantity can\'t be negative</string>
+    <string name="delivery_confirmed">Delivery confirmed by manager, thank you for using Lepau</string>
+    <string name="enjoy_your_meal">Enjoy Your Meal!</string>
+    <string name="have_you_received_your_order">Have you received your order?</string>
+    <string name="thank_you_for_using_lepau">Thank you for using Lepau</string>
+    <string name="not_yet">Not yet</string>
+    <string name="yes">Yes</string>
 
 </resources>

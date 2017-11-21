@@ -129,7 +129,7 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
                     }
                 }
                 if (mOrder.getAllOrders().isEmpty()) {
-                    Toast.makeText(getBaseContext(), "Your order is empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getBaseContext(), R.string.your_order_is_empty, Toast.LENGTH_SHORT).show();
                 } else {
                     Intent intent = new Intent(v.getContext(), ShoppingCartActivity.class);
                     intent.putExtra("Order", mOrder);
@@ -216,7 +216,7 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
                 return;
             }
             backPressedOnce = true;
-            Toast.makeText(this, "Press back again to leave", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.press_back_again_to_leave, Toast.LENGTH_SHORT).show();
 
             handler.postDelayed(runnable, 2000);
         }

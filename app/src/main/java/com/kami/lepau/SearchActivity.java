@@ -16,7 +16,7 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        String searchQuery = "Searching for " + getIntent().getStringExtra("query");
+        String searchQuery = getString(R.string.searching_for) + getIntent().getStringExtra("query");
         tvInfo = (TextView) findViewById(R.id.sa_search_text);
         tvInfo.setText(searchQuery);
 

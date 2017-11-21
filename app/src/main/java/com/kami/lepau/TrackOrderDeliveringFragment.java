@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -18,8 +17,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-
-import java.util.Locale;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
 
@@ -60,9 +57,9 @@ public class TrackOrderDeliveringFragment extends Fragment {
                 Intent notificationIntent = new Intent(getActivity(), MenuActivity.class);
                 PendingIntent notificationPendingIntent = PendingIntent.getActivity(getContext(), NOTIFICATION_ID, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-                String message = ("Delivery confirmed by manager, thank you for using Lepau");
+                String message = (getString(R.string.delivery_confirmed));
                 NotificationCompat.Builder notifyBuilder = new NotificationCompat.Builder(getContext())
-                        .setContentTitle("Enjoy Your Meal!")
+                        .setContentTitle(getString(R.string.enjoy_your_meal))
                         .setContentText(message)
                         .setContentIntent(notificationPendingIntent)
                         .setPriority(NotificationCompat.PRIORITY_HIGH)
@@ -83,20 +80,20 @@ public class TrackOrderDeliveringFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                builder.setMessage("Have you received your order?");
+                builder.setMessage(R.string.have_you_received_your_order);
                 builder.setCancelable(true);
 
                 builder.setPositiveButton(
-                        "Yes",
+                        R.string.yes,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.cancel();
                                 Intent notificationIntent = new Intent(getActivity(), MenuActivity.class);
                                 PendingIntent notificationPendingIntent = PendingIntent.getActivity(getContext(), NOTIFICATION_ID, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-                                String message = ("Thank you for using Lepau");
+                                String message = (getString(R.string.thank_you_for_using_lepau));
                                 NotificationCompat.Builder notifyBuilder = new NotificationCompat.Builder(getContext())
-                                        .setContentTitle("Enjoy Your Meal!")
+                                        .setContentTitle(getString(R.string.enjoy_your_meal))
                                         .setContentText(message)
                                         .setContentIntent(notificationPendingIntent)
                                         .setPriority(NotificationCompat.PRIORITY_HIGH)
@@ -112,7 +109,7 @@ public class TrackOrderDeliveringFragment extends Fragment {
                         });
 
                 builder.setNegativeButton(
-                        "Not yet",
+                        R.string.not_yet,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.cancel();
