@@ -29,7 +29,7 @@
             android:layout_toRightOf="@id/menuList_menuPicture"
             android:text="@string/menu_title"
             android:textColor="@color/mediumBrown"
-            android:textSize="28sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView

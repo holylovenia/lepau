@@ -11,6 +11,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.LinearSmoothScroller;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.util.Log;
@@ -138,6 +139,18 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
                 }
             }
         });
+
+        int position = getIntent().getIntExtra("searchResultPosition", -999);
+        String query = getIntent().getStringExtra("searchQuery");
+
+        if (position == -999) {}
+        else if (position == -1) {
+            String strErr = "Could not find " + query + " in our menus";
+            Toast.makeText(this, strErr, Toast.LENGTH_LONG).show();
+        }
+        else {
+            mRecyclerView.scrollToPosition(position);
+        }
     }
 
     /**

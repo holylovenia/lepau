@@ -68,7 +68,7 @@
     <ScrollView
         android:id="@+id/so_base_scroll"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:paddingTop="80dp"
         android:layout_below="@id/so_base_status"
         android:layout_alignParentTop="true"

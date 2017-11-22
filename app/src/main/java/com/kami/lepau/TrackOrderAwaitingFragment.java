@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.NotificationCompat;
@@ -32,9 +33,36 @@ public class TrackOrderAwaitingFragment extends Fragment {
 
     private View view;
     private ImageView ivIcon;
-    private Button cancelButton;
+    private Button btnCancel;
 
-    public TrackOrderAwaitingFragment() {}
+    private Handler handler = new Handler();
+    private final Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            Intent notificationIntent = new Intent(getActivity(), MenuActivity.class);
+            PendingIntent notificationPendingIntent = PendingIntent.getActivity(getContext(), NOTIFICATION_ID, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+            String message = ("Your order has been confirmed by our manager and is currently being prepared");
+            NotificationCompat.Builder notifyBuilder = new NotificationCompat.Builder(getContext())
+                    .setContentTitle("Order Confirmed")
+                    .setContentText(message)
+                    .setContentIntent(notificationPendingIntent)
+                    .setPriority(NotificationCompat.PRIORITY_HIGH)
+                    .setDefaults(NotificationCompat.DEFAULT_ALL)
+                    .setSmallIcon(R.drawable.lepau_plate_transparent);
+
+            notifyManager.notify(NOTIFICATION_ID, notifyBuilder.build());
+
+            fragmentManager.beginTransaction()
+                    .setCustomAnimations(R.anim.right_enter, R.anim.left_exit)
+                    .replace(R.id.toFrameContainer, new TrackOrderCookingFragment(), "TrackOrderCookingFragment")
+                    .commit();
+        }
+    };
+
+    public TrackOrderAwaitingFragment() {
+        handler.postDelayed(runnable, 5000);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,8 +76,8 @@ public class TrackOrderAwaitingFragment extends Fragment {
         notifyReceiver = new NotificationReceiver();
         getActivity().registerReceiver(notifyReceiver, new IntentFilter(ACTION_UPDATE_NOTIFICATION));
 
-        cancelButton = (Button) view.findViewById(R.id.to_awaiting_cancel_button);
-        cancelButton.setOnClickListener(new View.OnClickListener() {
+        btnCancel = (Button) view.findViewById(R.id.to_awaiting_cancel_button);
+        btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), MenuActivity.class);

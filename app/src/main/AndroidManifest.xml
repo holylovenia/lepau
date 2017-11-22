@@ -28,7 +28,7 @@
             android:label="@string/title_activity_track_order"
             android:theme="@style/AppThemeNoTitleBar" />
         <activity android:name=".OrderHistoryActivity" />
-        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".SearchActivity"/>
     </application>
 
 </manifest>
