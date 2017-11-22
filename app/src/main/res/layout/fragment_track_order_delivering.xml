@@ -103,7 +103,7 @@
         android:layout_margin="30dp"
         android:text="@string/to_status_delivering_info"
         android:textAlignment="center"
-        android:textSize="28sp"/>
+        android:textSize="24sp"/>
 
     <Button
         android:id="@+id/to_delivering_confirm"
