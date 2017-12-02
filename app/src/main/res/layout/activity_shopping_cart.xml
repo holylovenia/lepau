@@ -5,40 +5,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/mediumBrown"
-    android:padding="20dp"
     tools:context="com.kami.lepau.ShoppingCartActivity">
 
-    <Button
-        android:id="@+id/activityShoppingCart_cancelOrderButton"
-        android:layout_width="160dp"
+    <LinearLayout
+        android:id="@+id/activityShoppingCart_Buttons"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="5dp"
-        android:background="@drawable/order_button"
-        android:backgroundTint="@color/mocca"
-        android:text="@string/cancel"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/activityShoppingCart_confirmOrderButton"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="5dp"
-        android:background="@drawable/order_button"
-        android:text="@string/order"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        <Button
+            android:id="@+id/activityShoppingCart_cancelOrderButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:background="@color/mocca"
+            android:text="@string/cancel"
+            android:textSize="20sp"
+            android:layout_weight="2"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/activityShoppingCart_confirmOrderButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:background="@color/gold"
+            android:layout_marginEnd="5dp"
+            android:text="@string/order"
+            android:textSize="20sp"
+            android:layout_weight="3"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
 
     <RelativeLayout
         android:id="@+id/activityShoppingCart_detailContainerRelativeLayout"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_above="@id/activityShoppingCart_confirmOrderButton"
-        android:padding="16dp">
+        android:layout_above="@id/activityShoppingCart_Buttons"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp">
 
         <TextView
             android:id="@+id/activityShoppingCart_totalLabel"
@@ -55,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:textColor="@color/beige"
             android:textSize="20sp" />
 
@@ -76,7 +85,7 @@
             android:text="@string/delivery_cost_price"
             android:layout_height="wrap_content"
             android:layout_above="@id/activityShoppingCart_totalTextView"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:paddingBottom="15dp"
             android:textColor="@color/beige"
             android:textSize="20sp" />
@@ -85,8 +94,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_toLeftOf="@id/activityShoppingCart_totalTextView"
-            android:paddingRight="7dp"
+            android:layout_toStartOf="@id/activityShoppingCart_totalTextView"
+            android:paddingEnd="7dp"
             android:text="@string/rp"
             android:textColor="@color/beige"
             android:textSize="20sp" />
@@ -109,7 +118,7 @@
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:layout_above="@id/activityShoppingCart_detailContainerRelativeLayout"
-        android:background="@drawable/order_background"
+        android:background="@color/beige"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -118,7 +127,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingBottom="5dp"
-            android:paddingLeft="12dp"
+            android:paddingStart="12dp"
             android:paddingTop="5dp">
 
             <TextView
@@ -148,7 +157,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="3"
                 android:text="@string/subtotal"
                 android:textColor="@color/mediumBrown"
                 android:textStyle="bold" />

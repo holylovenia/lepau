@@ -16,25 +16,25 @@
         android:background="@color/beige"
         app:titleTextColor="@color/mediumBrown"
         android:id="@+id/menu_toolbar"
-        app:titleMarginEnd="5dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/AppTheme.PopupOverlay" />
+        app:popupTheme="@style/AppTheme.PopupOverlay">
 
-    <android.support.v7.widget.SearchView
-        android:id="@+id/menu_search_bar"
-        android:layout_width="225dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:background="@color/beige"
-        android:iconifiedByDefault="false"
-        android:queryBackground="@color/beige"
-        android:queryHint="@string/sa_hint" />
+        <android.support.v7.widget.SearchView
+            android:id="@+id/menu_search_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:background="@color/beige"
+            android:queryBackground="@color/beige"
+            android:queryHint="@string/sa_hint" />
+
+    </android.support.v7.widget.Toolbar>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/menu_search_bar"
+        android:layout_below="@id/menu_toolbar"
         android:background="@color/darkBrown"
         android:paddingBottom="20dp"
         android:paddingEnd="20dp"

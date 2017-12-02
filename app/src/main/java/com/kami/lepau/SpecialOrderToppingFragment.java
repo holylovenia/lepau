@@ -63,11 +63,10 @@ public class SpecialOrderToppingFragment extends Fragment {
         cb2 = (CheckBox) view.findViewById(R.id.so_topping_sunny_side_up);
         cb3 = (CheckBox) view.findViewById(R.id.so_topping_chicken);
         cb4 = (CheckBox) view.findViewById(R.id.so_topping_beef);
-        cb5 = (CheckBox) view.findViewById(R.id.so_topping_seafood);
-        cb6 = (CheckBox) view.findViewById(R.id.so_topping_cheese);
-        cb7 = (CheckBox) view.findViewById(R.id.so_topping_vegetable);
-        cb8 = (CheckBox) view.findViewById(R.id.so_topping_sausage);
-        cb9 = (CheckBox) view.findViewById(R.id.so_topping_meatball);
+        cb5 = (CheckBox) view.findViewById(R.id.so_topping_cheese);
+        cb6 = (CheckBox) view.findViewById(R.id.so_topping_vegetable);
+        cb7 = (CheckBox) view.findViewById(R.id.so_topping_sausage);
+        cb8 = (CheckBox) view.findViewById(R.id.so_topping_meatball);
 
         cbToppings.add(cb1);
         cbToppings.add(cb2);
@@ -77,7 +76,6 @@ public class SpecialOrderToppingFragment extends Fragment {
         cbToppings.add(cb6);
         cbToppings.add(cb7);
         cbToppings.add(cb8);
-        cbToppings.add(cb9);
 
         btnNext = (Button) view.findViewById(R.id.so_topping_next);
 

@@ -56,18 +56,18 @@ public class OrderHistoryActivity extends AppCompatActivity {
         final Calendar cal = Calendar.getInstance();
         cal.add(Calendar.DATE, -5);
         dummyOrder.setDate(cal.getTime());
-        dummyOrder.addOrder(new OrderItem(getString(R.string.bacon_eggs), "", 10000, 3, -999));
-        dummyOrder.addOrder(new OrderItem(getString(R.string.ketupat), "", 7500, 5, -999));
+        dummyOrder.addOrder(new OrderItem(getString(R.string.bacon_eggs), "", 10000, 1, -999));
+        dummyOrder.addOrder(new OrderItem(getString(R.string.ketupat), "", 7500, 1, -999));
         dummyOrder.addOrder(new OrderItem(getString(R.string.omelette), "", 20000, 2, -999));
 
         Order dummyOrder2 = new Order();
         cal.add(Calendar.DATE, -2);
         dummyOrder2.setDate(cal.getTime());
-        dummyOrder2.addOrder(new OrderItem(getString(R.string.indomie), "", 5000, 4, -999));
-        dummyOrder2.addOrder(new OrderItem(getString(R.string.french_toast), "", 12500, 7, -999));
+        dummyOrder2.addOrder(new OrderItem(getString(R.string.indomie), "", 5000, 1, -999));
+        dummyOrder2.addOrder(new OrderItem(getString(R.string.french_toast), "", 12500, 1, -999));
 
         Order dummyOrder3 = new Order();
-        dummyOrder3.addOrder(new OrderItem(getString(R.string.custom_fried_rice), "", 30000, 3, -999));
+        dummyOrder3.addOrder(new OrderItem(getString(R.string.custom_fried_rice), "", 30000, 2, -999));
         dummyOrder3.addOrder(new OrderItem(getString(R.string.ketupat), "", 7500, 2, -999));
         dummyOrder3.addOrder(new OrderItem(getString(R.string.indomie), "", 5000, 1, -999));
 

@@ -2,9 +2,7 @@
 <resources>
     <string-array name="soSpinnerRiceItems">
         <item>@string/white_rice</item>
-        <item>@string/jasmine_rice</item>
         <item>@string/brown_rice</item>
-        <item>@string/sticky_rice</item>
     </string-array>
 
     <string-array name="menu_titles">

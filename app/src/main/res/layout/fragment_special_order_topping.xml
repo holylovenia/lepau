@@ -118,14 +118,6 @@
                 android:paddingBottom="12dp"
                 android:textSize="18sp"/>
 
-            <CheckBox android:id="@+id/so_topping_seafood"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/topping_seafood"
-                android:paddingTop="12dp"
-                android:paddingBottom="12dp"
-                android:textSize="18sp"/>
-
             <CheckBox android:id="@+id/so_topping_cheese"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

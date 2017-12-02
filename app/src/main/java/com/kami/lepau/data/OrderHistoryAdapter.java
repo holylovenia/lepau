@@ -68,7 +68,7 @@ public class OrderHistoryAdapter extends RecyclerView.Adapter<OrderHistoryAdapte
             //Populate the textviews with data
             mDateText.setText(currentOrder.getDate());
             mMenuListText.setText(currentOrder.getOrdersInString());
-            mPriceText.setText(String.valueOf(currentOrder.getTotal()));
+            mPriceText.setText(String.valueOf(currentOrder.getTotal()+2000));
         }
 
         @Override
