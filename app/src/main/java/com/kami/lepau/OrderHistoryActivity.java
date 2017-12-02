@@ -68,8 +68,8 @@ public class OrderHistoryActivity extends AppCompatActivity {
 
         Order dummyOrder3 = new Order();
         dummyOrder3.addOrder(new OrderItem(getString(R.string.custom_fried_rice), "", 30000, 3, -999));
-        dummyOrder.addOrder(new OrderItem(getString(R.string.ketupat), "", 7500, 5, -999));
-        dummyOrder2.addOrder(new OrderItem(getString(R.string.indomie), "", 5000, 4, -999));
+        dummyOrder3.addOrder(new OrderItem(getString(R.string.ketupat), "", 7500, 2, -999));
+        dummyOrder3.addOrder(new OrderItem(getString(R.string.indomie), "", 5000, 1, -999));
 
         mOrders = new ArrayList<>();
         mOrders.add(dummyOrder);
