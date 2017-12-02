@@ -104,7 +104,7 @@
     <string name="subtotal">Subtotal</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_order_menu">OrderMenu</string>
-    <string name="title_activity_special_order">Nasi Goreng Personal Lepau</string>
+    <string name="title_activity_special_order">Nasi Goreng Spesial Lepau</string>
     <string name="title_activity_track_order">TrackOrderActivity</string>
     <string name="to_confirm_delivery">Selesai</string>
     <string name="to_desc">Deskripsi Gambar</string>
@@ -127,10 +127,9 @@
     <string name="tracking_order">Mengecek Pesanan</string>
     <string name="zero">0</string>
     <string name="bacon_eggs">Babi Asap dan Telur</string>
-    <string name="bacon_eggs_desc">Apakah ada makanan yang lebih baik daripada babi asap dan telur untuk memulai hari?</string>
     <string name="brown_rice">Nasi coklat (14k)</string>
     <string name="curry">Kari</string>
-    <string name="curry_desc">Kari Jepang lezat dan nikmat yang dibuat dengan sapi, kentang, wortel, jamur, dan rempah-rempah.</string>
+    <string name="curry_desc">Kari Jepang gurih dan nikmat yang dibuat dengan sapi, kentang, wortel, jamur, dan rempah-rempah dengan kuah kental yang tak kalah lezatnya.</string>
     <string name="french_toast">Roti Panggang</string>
     <string name="french_toast_desc">Lembar-lembar roti berlumur dalam sedapnya telur yang dikocok dengan susu dan krim.</string>
     <string name="indomie">Indomie</string>
@@ -139,7 +138,7 @@
     <string name="ketupat">Ketupat</string>
     <string name="ketupat_desc">Salah satu masakan tradisional Malaysia yang terbuat dari nasi lekat.</string>
     <string name="omelette">Omelet</string>
-    <string name="omelette_desc">Omelet kami terlihat siap diantar karena mereka memang siap untuk diantar - dengan telur berisi sayuran pilihan, daging, dan keju yang lumer di lidah.</string>
+    <string name="omelette_desc">Telur dadar kaya rasa berisi sayuran pilihan, daging, dan keju yang lumer di mulut.</string>
     <string name="white_rice">Nasi putih (10k)</string>
     <string name="sticky_rice">Nasi lekat (14k)</string>
     <string name="delivery_confirmed">Pengantaran sudah dikonfirmasi oleh manajer, terima kasih telah menggunakan Lepau</string>
@@ -152,4 +151,8 @@
     <string name="quantity_cant_be_negative">Kuantitas tidak bisa bernilai negatif</string>
     <string name="yes">Sudah</string>
     <string name="your_order_is_empty">Anda tidak memiliki pesanan</string>
+    <string name="bacon_eggs_desc">Babi asap dan telur yang hangat siap menemani pagi Anda dengan kelezatan dan harum menggoda.</string>
+    <string name="sign_out">Keluar</string>
+    <string name="custom_fried_rice">Nasi Goreng Spesial</string>
+    <string name="lepau_specialty">Spesial dari Lepau! Kreasikan nasi goreng Anda.</string>
 </resources>

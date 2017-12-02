@@ -175,5 +175,8 @@
     <string name="thank_you_for_using_lepau">Thank you for using Lepau</string>
     <string name="not_yet">Not yet</string>
     <string name="yes">Yes</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="custom_fried_rice">Custom Fried Rice</string>
+    <string name="lepau_specialty">Lepau\'s specialty! Make your own fried rice.</string>
 
 </resources>

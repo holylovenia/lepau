@@ -68,7 +68,7 @@ public class SpecialOrderCompleteFragment extends Fragment {
                 spiceLevel = bundle.getInt("spiceLevel");
                 toppingAmount = bundle.getInt("toppingAmount");
             }
-            orderItem = new OrderItem(true);
+            orderItem = new OrderItem(true, getString(R.string.custom_fried_rice), getString(R.string.lepau_specialty));
         }
 
         tvRiceType = (TextView) view.findViewById(R.id.so_complete_rice);

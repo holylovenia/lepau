@@ -9,11 +9,12 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.LinearSmoothScroller;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,6 +38,7 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
     private Button mOrderButton;
     private Button specialOrderButton;
     private Parcelable recyclerViewState;
+    private Toolbar mActionBarToolbar;
 
     private SearchView svMenu;
 
@@ -54,6 +56,7 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -79,6 +82,16 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
             mRecyclerView.getLayoutManager().onRestoreInstanceState(savedState);
             mAdapter.notifyDataSetChanged();
         }
+
+        mActionBarToolbar = (Toolbar) findViewById(R.id.menu_toolbar);
+        setSupportActionBar(mActionBarToolbar);
+        getSupportActionBar().setTitle(getString(R.string.pelesiran));
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, mActionBarToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
 
         svMenu = (SearchView) findViewById(R.id.menu_search_bar);
         svMenu.setFocusable(false);
@@ -143,13 +156,13 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
         int position = getIntent().getIntExtra("searchResultPosition", -999);
         String query = getIntent().getStringExtra("searchQuery");
 
-        if (position == -999) {}
-        else if (position == -1) {
-            String strErr = "Could not find " + query + " in our menus";
-            Toast.makeText(this, strErr, Toast.LENGTH_LONG).show();
-        }
-        else {
-            mRecyclerView.scrollToPosition(position);
+        if (position != -999) {
+            if (position == -1) {
+                String strErr = "Could not find " + query + " in our menus";
+                Toast.makeText(this, strErr, Toast.LENGTH_LONG).show();
+            } else {
+                mRecyclerView.scrollToPosition(position);
+            }
         }
     }
 
@@ -253,14 +266,22 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent);
                 finish();
                 break;
+            case R.id.nav_sign_out:
+                intent = new Intent(this, AuthenticationActivity.class);
+                startActivity(intent);
+                finish();
+                break;
             case R.id.dapur_dipatiukur:
                 item.setChecked(true);
+                getSupportActionBar().setTitle(getString(R.string.dipatiukur));
                 break;
             case R.id.dapur_cisitu:
                 item.setChecked(true);
+                getSupportActionBar().setTitle(getString(R.string.cisitu));
                 break;
             case R.id.dapur_pelesiran:
                 item.setChecked(true);
+                getSupportActionBar().setTitle(getString(R.string.pelesiran));
                 break;
             default:
                 break;

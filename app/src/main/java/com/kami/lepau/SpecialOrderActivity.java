@@ -21,7 +21,7 @@ public class SpecialOrderActivity extends AppCompatActivity {
         fragmentManager = this.getSupportFragmentManager();
 
         if (savedInstanceState == null) {
-            orderItem = new OrderItem(true);
+            orderItem = new OrderItem(true, getString(R.string.custom_fried_rice), getString(R.string.lepau_specialty));
             fragmentManager.beginTransaction()
                     .replace(R.id.soFrameContainer, new SpecialOrderBaseFragment(), "BaseFragment")
                     .commit();

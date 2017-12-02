@@ -18,7 +18,7 @@
 
     <string-array name="menu_descriptions">
         <item>@string/bacon_eggs_desc</item>
-        <item>@string/curry</item>
+        <item>@string/curry_desc</item>
         <item>@string/indomie_desc</item>
         <item>@string/ketupat_desc</item>
         <item>@string/omelette_desc</item>
@@ -26,20 +26,20 @@
     </string-array>
 
     <integer-array name="menu_prices">
-        <item>20000</item>
-        <item>35000</item>
         <item>10000</item>
-        <item>15000</item>
-        <item>40000</item>
-        <item>25000</item>
+        <item>17500</item>
+        <item>5000</item>
+        <item>7500</item>
+        <item>20000</item>
+        <item>12500</item>
     </integer-array>
 
     <array name="menu_pictures">
-        <item>@drawable/menu_bacon</item>
-        <item>@drawable/menu_curry</item>
-        <item>@drawable/menu_indomie</item>
-        <item>@drawable/menu_ketupat</item>
-        <item>@drawable/menu_omelette</item>
-        <item>@drawable/menu_toast</item>
+        <item>@drawable/menu_bacon2</item>
+        <item>@drawable/menu_curry2</item>
+        <item>@drawable/menu_indomie2</item>
+        <item>@drawable/menu_ketupat2</item>
+        <item>@drawable/menu_omelette2</item>
+        <item>@drawable/menu_toast2</item>
     </array>
 </resources>

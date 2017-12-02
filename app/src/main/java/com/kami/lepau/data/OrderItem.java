@@ -37,9 +37,9 @@ public class OrderItem implements Serializable {
         this.imageResource = imageResource;
     }
 
-    public OrderItem(boolean isSpecialOrder) {
-        this.itemName = "Custom Fried Rice";
-        this.itemDescription = "Lepau's specialty! Make your own fried rice.";
+    public OrderItem(boolean isSpecialOrder, String itemName, String itemDescription) {
+        this.itemName = itemName;
+        this.itemDescription = itemDescription;
         this.pricePerItem = 0;
         this.quantity = 0;
         this.specialOrderItem = new SpecialOrderItem();

@@ -13,6 +13,7 @@ import com.kami.lepau.data.OrderHistoryAdapter;
 import com.kami.lepau.data.OrderItem;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class OrderHistoryActivity extends AppCompatActivity {
     private ArrayList<Order> mOrders;
@@ -52,14 +53,27 @@ public class OrderHistoryActivity extends AppCompatActivity {
 
     private void initializeOrders() {
         Order dummyOrder = new Order();
-        dummyOrder.addOrder(new OrderItem(getString(R.string.bacon_eggs), "", 20000, 3, -999));
-        dummyOrder.addOrder(new OrderItem(getString(R.string.ketupat), "", 15000, 5, -999));
-        dummyOrder.addOrder(new OrderItem(getString(R.string.omelette), "", 40000, 2, -999));
+        final Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -5);
+        dummyOrder.setDate(cal.getTime());
+        dummyOrder.addOrder(new OrderItem(getString(R.string.bacon_eggs), "", 10000, 3, -999));
+        dummyOrder.addOrder(new OrderItem(getString(R.string.ketupat), "", 7500, 5, -999));
+        dummyOrder.addOrder(new OrderItem(getString(R.string.omelette), "", 20000, 2, -999));
+
         Order dummyOrder2 = new Order();
-        dummyOrder2.addOrder(new OrderItem(getString(R.string.indomie), "", 10000, 4, -999));
-        dummyOrder2.addOrder(new OrderItem(getString(R.string.french_toast), "", 25000, 7, -999));
+        cal.add(Calendar.DATE, -2);
+        dummyOrder2.setDate(cal.getTime());
+        dummyOrder2.addOrder(new OrderItem(getString(R.string.indomie), "", 5000, 4, -999));
+        dummyOrder2.addOrder(new OrderItem(getString(R.string.french_toast), "", 12500, 7, -999));
+
+        Order dummyOrder3 = new Order();
+        dummyOrder3.addOrder(new OrderItem(getString(R.string.custom_fried_rice), "", 30000, 3, -999));
+        dummyOrder.addOrder(new OrderItem(getString(R.string.ketupat), "", 7500, 5, -999));
+        dummyOrder2.addOrder(new OrderItem(getString(R.string.indomie), "", 5000, 4, -999));
+
         mOrders = new ArrayList<>();
         mOrders.add(dummyOrder);
         mOrders.add(dummyOrder2);
+        mOrders.add(dummyOrder3);
     }
 }
