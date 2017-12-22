@@ -2,6 +2,21 @@
 High fidelity prototype for E-Warung
 
 
+## Credits
+
+* [Holy Lovenia](https://github.com/holylovenia)
+* [Rionaldi Chandraseta](https://github.com/rionaldichandraseta)
+
+
+## Abstract
+
+One of the reasons for small food vendors, such as “warung”, lose against larger restaurants is due to the marketing power of the food vendor itself. Large restaurants and franchises usually have better marketing that results in more people knowing about the restaurant and eventually going to the restaurant.
+We propose a solution to increase the marketing power of small food vendors by using online delivery service that is very popular and used by the society almost everyday. We have designed an Android application with the name “Lepau”, where people could order food from “warung” online.
+In the design process, our application is built from the functional requirement design, up until the high fidelity prototype. Throughout the process, we also consider the feedbacks from users that have tried the application hands-on.
+
+Keyword: Application, Delivery, Food, Online, Warung
+
+
 ## Product Summary
 
 ### Problem Space
@@ -21,7 +36,4 @@ Download Lepau's APK at `release` directory!
 
 
 ## Video
-[![Lepau][gif01]](https://youtu.be/m3ELcct9-AA "Lepau")
-
-
-[gif01]: images/Lepau.gif
+![Trailer](https://bit.ly/LepauKami "Lepau")
